@@ -15,6 +15,7 @@
 		<module>zmail-product</module>
 		<module>zmail-ware</module>
 		<module>zmail-admin</module>
+		<module>zmail-common</module>
 	</modules>
 
 </project>
