@@ -14,6 +14,7 @@
 		<module>zmail-order</module>
 		<module>zmail-product</module>
 		<module>zmail-ware</module>
+		<module>zmail-admin</module>
 	</modules>
 
 </project>
