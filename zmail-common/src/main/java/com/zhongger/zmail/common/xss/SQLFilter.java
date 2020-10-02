@@ -3,7 +3,8 @@
 package com.zhongger.zmail.common.xss;
 
 import com.zhongger.zmail.common.exception.RRException;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
+
 
 /**
  * SQL过滤

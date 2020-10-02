@@ -1,20 +1,17 @@
 package com.zhongger.zmail.ware.controller;
 
+import com.zhongger.zmail.common.utils.PageUtils;
+import com.zhongger.zmail.common.utils.R;
+import com.zhongger.zmail.ware.entity.PurchaseEntity;
+import com.zhongger.zmail.ware.service.PurchaseService;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
-
-import com.zhongger.zmail.ware.vo.MergeVo;
-import com.zhongger.zmail.ware.vo.PurchaseDoneVo;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
-import com.zhongger.zmail.ware.entity.PurchaseEntity;
-import com.zhongger.zmail.ware.service.PurchaseService;
-import com.zhongger.zmail.common.utils.PageUtils;
-import com.zhongger.zmail.common.utils.R;
-
 
 
 /**
@@ -30,35 +27,10 @@ public class PurchaseController {
     @Autowired
     private PurchaseService purchaseService;
 
-    ///ware/purchase/done
-    @PostMapping("/done")
-    public R finish(@RequestBody PurchaseDoneVo doneVo){
 
-        purchaseService.done(doneVo);
 
-        return R.ok();
-    }
 
-    /**
-     * 领取采购单
-     * @return
-     */
-    @PostMapping("/received")
-    public R received(@RequestBody List<Long> ids){
 
-        purchaseService.received(ids);
-
-        return R.ok();
-    }
-
-    ///ware/purchase/unreceive/list
-    ///ware/purchase/merge
-    @PostMapping("/merge")
-    public R merge(@RequestBody MergeVo mergeVo){
-
-        purchaseService.mergePurchase(mergeVo);
-        return R.ok();
-    }
 
     @RequestMapping("/unreceive/list")
     //@RequiresPermissions("ware:purchase:list")
