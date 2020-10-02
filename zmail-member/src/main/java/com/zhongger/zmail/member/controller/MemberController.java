@@ -3,6 +3,7 @@ package com.zhongger.zmail.member.controller;
 import com.zhongger.zmail.common.utils.PageUtils;
 import com.zhongger.zmail.common.utils.R;
 import com.zhongger.zmail.member.entity.MemberEntity;
+import com.zhongger.zmail.member.feign.CouponFeignService;
 import com.zhongger.zmail.member.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -24,8 +25,16 @@ public class MemberController {
     @Autowired
     private MemberService memberService;
 
+    @Autowired
+    private CouponFeignService couponFeignService;
 
-
+    @RequestMapping("/testOpenFeign")
+    public R testOpenFeign(){
+        R coupons = couponFeignService.getMemberCoupons();
+        MemberEntity memberEntity = new MemberEntity();
+        memberEntity.setNickname("Zhongger");
+        return R.ok().put("member",memberEntity).put("coupons",coupons.get("coupons"));
+    }
 
     /**
      * 列表

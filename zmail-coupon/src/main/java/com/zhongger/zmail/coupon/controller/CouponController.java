@@ -16,16 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.zhongger.zmail.coupon.entity.CouponEntity;
 import com.zhongger.zmail.coupon.service.CouponService;
-
-
-
-
 /**
  * 优惠券信息
- *
- * @author leifengyang
- * @email leifengyang@gmail.com
- * @date 2019-10-08 09:36:40
  */
 @RefreshScope
 @RestController
@@ -47,7 +39,7 @@ public class CouponController {
     }
 
     @RequestMapping("/member/list")
-    public R membercoupons(){
+    public R getMemberCoupons(){
         CouponEntity couponEntity = new CouponEntity();
         couponEntity.setCouponName("满100减10");
         return R.ok().put("coupons",Arrays.asList(couponEntity));
