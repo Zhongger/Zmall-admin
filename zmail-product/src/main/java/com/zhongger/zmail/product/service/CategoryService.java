@@ -5,6 +5,7 @@ import com.zhongger.zmail.common.utils.PageUtils;
 import com.zhongger.zmail.product.entity.CategoryEntity;
 
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -19,5 +20,6 @@ public interface CategoryService extends IService<CategoryEntity> {
     PageUtils queryPage(Map<String, Object> params);
 
 
+    List<CategoryEntity> listTree();
 }
 

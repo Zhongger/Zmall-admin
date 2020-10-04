@@ -1,4 +1,6 @@
 spring:
+  application:
+    name: product
   datasource:
     username: root
     password: root
