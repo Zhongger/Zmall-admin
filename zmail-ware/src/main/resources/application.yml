@@ -10,7 +10,7 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 192.168.1.5:8848
+        server-addr: 192.168.1.4:8848
         service: ware # 微服务名，注意一定要写，否则无法被注册到Nacos中
 
   jackson:
