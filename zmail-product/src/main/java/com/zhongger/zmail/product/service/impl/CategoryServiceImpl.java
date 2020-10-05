@@ -3,6 +3,7 @@ package com.zhongger.zmail.product.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.sun.xml.internal.bind.v2.TODO;
 import com.zhongger.zmail.common.utils.PageUtils;
 import com.zhongger.zmail.common.utils.Query;
 import com.zhongger.zmail.product.dao.CategoryDao;
@@ -12,7 +13,6 @@ import com.zhongger.zmail.product.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -51,6 +51,14 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
                     return (m1.getSort() == null ? 0 : m1.getSort()) - (m2.getSort() == null ? 0 : m2.getSort());
                 }).collect(Collectors.toList());
         return level1;
+    }
+
+    @Override
+    public void removeMenuByIds(List<Long> ids) {
+        //TODO:检查当前删除菜单，是否被其他地方引用
+        //逻辑删除
+
+        baseMapper.deleteBatchIds(ids);
     }
 
     private List<CategoryEntity> getChildren(CategoryEntity root , List<CategoryEntity> all){

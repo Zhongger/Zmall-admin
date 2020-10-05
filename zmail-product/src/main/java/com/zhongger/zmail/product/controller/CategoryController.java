@@ -33,6 +33,14 @@ public class CategoryController {
     }
 
 
+    public R delete(@RequestBody Long[] catIds){
+        //1.检查当前删除的菜单，是否被别的地方引用
+
+        categoryService.removeMenuByIds(Arrays.asList(catIds));
+        return R.ok().put("data","删除成功");
+    }
+
+
     /**
      * 信息
      */
