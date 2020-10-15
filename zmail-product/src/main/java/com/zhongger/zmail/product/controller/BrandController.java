@@ -14,10 +14,6 @@ import java.util.Map;
 
 /**
  * 品牌
- *
- * @author leifengyang
- * @email leifengyang@gmail.com
- * @date 2019-10-01 22:50:32
  */
 @RestController
 @RequestMapping("product/brand")
@@ -32,7 +28,6 @@ public class BrandController {
     //@RequiresPermissions("product:brand:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = brandService.queryPage(params);
-
         return R.ok().put("page", page);
     }
 
@@ -57,6 +52,18 @@ public class BrandController {
     public R delete(@RequestBody Long[] brandIds){
 		brandService.removeByIds(Arrays.asList(brandIds));
 
+        return R.ok();
+    }
+
+    @RequestMapping("/update")
+    public R update(@RequestBody BrandEntity brandEntity){
+        brandService.updateById(brandEntity);
+        return R.ok();
+    }
+
+    @RequestMapping("/update/status")
+    public R updateStatus(@RequestBody  BrandEntity brandEntity){
+        brandService.updateById(brandEntity);
         return R.ok();
     }
 
