@@ -20,6 +20,8 @@
 	</properties>
 
 	<dependencies>
+
+
 		<dependency>
 			<groupId>com.zhongger.zmail</groupId>
 			<artifactId>zmail-common</artifactId>
