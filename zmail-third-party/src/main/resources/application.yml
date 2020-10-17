@@ -5,6 +5,12 @@ spring:
         server-addr: 127.0.0.1:8848
   application:
     name: third-party
-
+alibaba:
+  cloud:
+    access-key: LTAI4G3JvNVddvR1Z8idZEhE
+    secret-key: CACY0zkoLDHyOnTAkAL5VJ1HIsN3Kd
+    oss:
+      endpoint: oss-cn-shenzhen.aliyuncs.com
+      bucket: zmall-bucket
 server:
   port: 30000
