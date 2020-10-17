@@ -5,6 +5,8 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 /**
@@ -28,12 +30,11 @@ public class BrandEntity implements Serializable {
 	/**
 	 * 品牌名
 	 */
-
+	@NotBlank(message = "品牌名必须提交")
 	private String name;
 	/**
 	 * 品牌logo地址
 	 */
-
 	private String logo;
 	/**
 	 * 介绍
