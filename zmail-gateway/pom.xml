@@ -24,16 +24,6 @@
 			<groupId>com.zhongger.zmail</groupId>
 			<artifactId>zmail-common</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
-			<exclusions>
-				<exclusion>
-					<groupId>com.alibaba.cloud</groupId>
-					<artifactId>aliyun-oss-spring-boot-starter</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>com.aliyun.oss</groupId>
-					<artifactId>aliyun-sdk-oss</artifactId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
