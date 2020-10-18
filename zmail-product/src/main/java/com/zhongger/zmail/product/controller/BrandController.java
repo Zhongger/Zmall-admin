@@ -2,16 +2,15 @@ package com.zhongger.zmail.product.controller;
 
 import com.zhongger.zmail.common.utils.PageUtils;
 import com.zhongger.zmail.common.utils.R;
+import com.zhongger.zmail.common.valid.AddGroup;
+import com.zhongger.zmail.common.valid.UpdateGroup;
 import com.zhongger.zmail.product.entity.BrandEntity;
 import com.zhongger.zmail.product.service.BrandService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.Map;
 
 
@@ -59,7 +58,7 @@ public class BrandController {
     }
 
     @RequestMapping("/save")
-    public R save(@Valid @RequestBody BrandEntity brandEntity/*, BindingResult bindingResult*/) {
+    public R save(@Validated({AddGroup.class}) @RequestBody BrandEntity brandEntity/*, BindingResult bindingResult*/) {
 /*        if (bindingResult.hasErrors()) {
             //1.获取校验异常的结果
             HashMap<String, String> map = new HashMap<>();
@@ -76,7 +75,7 @@ public class BrandController {
     }
 
     @RequestMapping("/update")
-    public R update(@RequestBody BrandEntity brandEntity) {
+    public R update(@Validated({UpdateGroup.class})@RequestBody BrandEntity brandEntity) {
         brandService.updateById(brandEntity);
         return R.ok();
     }

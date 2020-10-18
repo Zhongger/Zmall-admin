@@ -3,10 +3,13 @@ package com.zhongger.zmail.product.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.zhongger.zmail.common.valid.AddGroup;
+import com.zhongger.zmail.common.valid.UpdateGroup;
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Null;
 import java.io.Serializable;
 
 /**
@@ -24,17 +27,19 @@ public class BrandEntity implements Serializable {
 	/**
 	 * 品牌id
 	 */
-
+	@NotNull(message = "修改必须指定品牌id",groups = {UpdateGroup.class})
+	@Null(message = "新增不能指定id",groups = {AddGroup.class})
 	@TableId
 	private Long brandId;
 	/**
 	 * 品牌名
 	 */
-	@NotBlank(message = "品牌名必须提交")
+	@NotBlank(message = "品牌名必须提交",groups = {UpdateGroup.class,AddGroup.class})
 	private String name;
 	/**
 	 * 品牌logo地址
 	 */
+	@NotNull(groups = {UpdateGroup.class,AddGroup.class})
 	private String logo;
 	/**
 	 * 介绍
