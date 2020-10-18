@@ -1,5 +1,6 @@
 package com.zhongger.zmail.product.exception;
 
+import com.zhongger.zmail.common.exception.BizCodeEnume;
 import com.zhongger.zmail.common.utils.R;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.BindingResult;
@@ -25,11 +26,11 @@ public class ZmallExceptionControllerAdvice {
         bindingResult.getFieldErrors().forEach(fieldError -> {
             errorMap.put(fieldError.getField(),fieldError.getDefaultMessage());
         });
-        return R.error(400,"数据校验出现问题").put("data",errorMap);
+        return R.error(BizCodeEnume.VAILD_EXCEPTION.getCode(),BizCodeEnume.VAILD_EXCEPTION.getMsg()).put("data",errorMap);
     }
 
     @ExceptionHandler(value = Throwable.class)
     public R handleException(Throwable throwable){
-        return R.error();
+        return R.error(BizCodeEnume.UNKNOW_EXCEPTION.getCode(),BizCodeEnume.UNKNOW_EXCEPTION.getMsg());
     }
 }
