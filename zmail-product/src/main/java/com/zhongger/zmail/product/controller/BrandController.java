@@ -59,23 +59,12 @@ public class BrandController {
 
     @RequestMapping("/save")
     public R save(@Validated({AddGroup.class}) @RequestBody BrandEntity brandEntity/*, BindingResult bindingResult*/) {
-/*        if (bindingResult.hasErrors()) {
-            //1.获取校验异常的结果
-            HashMap<String, String> map = new HashMap<>();
-            bindingResult.getFieldErrors().forEach((item) -> {
-                String defaultMessage = item.getDefaultMessage();
-                String field = item.getField();
-                ;
-                map.put(field, defaultMessage);
-            });
-            return R.error(400, "提交的数据不合法").put("data", map);
-        }*/
         brandService.save(brandEntity);
         return R.ok();
     }
 
     @RequestMapping("/update")
-    public R update(@Validated({UpdateGroup.class})@RequestBody BrandEntity brandEntity) {
+    public R update(@Validated({UpdateGroup.class}) @RequestBody BrandEntity brandEntity) {
         brandService.updateById(brandEntity);
         return R.ok();
     }
