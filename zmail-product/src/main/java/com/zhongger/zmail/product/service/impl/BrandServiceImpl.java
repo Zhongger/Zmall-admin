@@ -40,6 +40,16 @@ public class BrandServiceImpl extends ServiceImpl<BrandDao, BrandEntity> impleme
         return new PageUtils(page);
     }
 
+    @Override
+    public void updateDetail(BrandEntity brandEntity) {
+        //保证冗余字段的数据一致
+        this.updateById(brandEntity);
+        if (!StringUtils.isEmpty(brandEntity.getName())){
+            //同步更新其他关联表的数据
+            categoryBrandRelationService.updateBrand(brandEntity.getBrandId(), brandEntity.getName());
+            //TODO 更新其他关联
+        }
+    }
 
 
 }
