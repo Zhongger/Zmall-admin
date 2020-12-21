@@ -4,6 +4,7 @@ import com.zhongger.zmail.common.utils.PageUtils;
 import com.zhongger.zmail.common.utils.R;
 import com.zhongger.zmail.product.service.AttrService;
 import com.zhongger.zmail.product.service.ProductAttrValueService;
+import com.zhongger.zmail.product.vo.AttrRespVo;
 import com.zhongger.zmail.product.vo.AttrVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -31,6 +32,11 @@ public class AttrController {
     @RequestMapping("/save")
     public R save(@RequestBody AttrVo attrVo){
         attrService.saveAttr(attrVo);
+        return R.ok();
+    }
+    @RequestMapping("/update")
+    public R update(@RequestBody AttrVo attrVo){
+        attrService.updateAttr(attrVo);
         return R.ok();
     }
 
@@ -65,6 +71,12 @@ public class AttrController {
 		attrService.removeByIds(Arrays.asList(attrIds));
 
         return R.ok();
+    }
+
+    @RequestMapping("/info/{attrId}")
+    public R info(@PathVariable("attrId") Long attrId){
+        AttrRespVo attrRespVo = attrService.getAttrInfo(attrId);
+        return R.ok().put("attr",attrRespVo);
     }
 
 }
