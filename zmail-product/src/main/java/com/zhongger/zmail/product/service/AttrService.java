@@ -7,7 +7,6 @@ import com.zhongger.zmail.product.entity.AttrEntity;
 import com.zhongger.zmail.product.vo.AttrRespVo;
 import com.zhongger.zmail.product.vo.AttrVo;
 
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -24,7 +23,7 @@ public interface AttrService extends IService<AttrEntity> {
 
     void saveAttr(AttrVo attrVo);
 
-    PageUtils queryBaseAttrPage(Map<String, Object> params, Long catelogId);
+    PageUtils queryBaseAttrPage(Map<String, Object> params, Long catelogId, String type);
 
     AttrRespVo getAttrInfo(Long attrId);
 
