@@ -4,11 +4,9 @@ import com.zhongger.zmail.common.utils.PageUtils;
 import com.zhongger.zmail.common.utils.R;
 import com.zhongger.zmail.product.service.AttrService;
 import com.zhongger.zmail.product.service.ProductAttrValueService;
+import com.zhongger.zmail.product.vo.AttrVo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
 import java.util.Map;
@@ -30,7 +28,18 @@ public class AttrController {
     @Autowired
     ProductAttrValueService productAttrValueService;
 
+    @RequestMapping("/save")
+    public R save(@RequestBody AttrVo attrVo){
+        attrService.saveAttr(attrVo);
+        return R.ok();
+    }
 
+    @GetMapping("/base/list/{catelogId}")
+    public R baseAttrList(@RequestParam Map<String,Object> params,
+                          @PathVariable("catelogId")Long catelogId){
+        PageUtils page =  attrService.queryBaseAttrPage(params,catelogId);
+        return R.ok().put("page", page);
+    }
 
 
 

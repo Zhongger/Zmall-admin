@@ -9,18 +9,35 @@ import com.zhongger.zmail.product.dao.AttrAttrgroupRelationDao;
 import com.zhongger.zmail.product.dao.AttrDao;
 import com.zhongger.zmail.product.dao.AttrGroupDao;
 import com.zhongger.zmail.product.dao.CategoryDao;
+import com.zhongger.zmail.product.entity.AttrAttrgroupRelationEntity;
 import com.zhongger.zmail.product.entity.AttrEntity;
+import com.zhongger.zmail.product.entity.AttrGroupEntity;
+import com.zhongger.zmail.product.entity.CategoryEntity;
 import com.zhongger.zmail.product.service.AttrService;
-import com.zhongger.zmail.product.service.CategoryService;
+import com.zhongger.zmail.product.vo.AttrRespVo;
+import com.zhongger.zmail.product.vo.AttrVo;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 
 @Service("attrService")
 public class AttrServiceImpl extends ServiceImpl<AttrDao, AttrEntity> implements AttrService {
 
+    @Autowired
+    private AttrAttrgroupRelationDao attrAttrgroupRelationDao;
+    @Autowired
+    private AttrGroupDao attrGroupDao;
+    @Autowired
+    private CategoryDao categoryDao;
+    @Autowired
+    private AttrDao attrDao;
 
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
@@ -32,8 +49,58 @@ public class AttrServiceImpl extends ServiceImpl<AttrDao, AttrEntity> implements
         return new PageUtils(page);
     }
 
+    @Override
+    public void saveAttr(AttrVo attrVo) {
+        AttrEntity attrEntity = new AttrEntity();
+        BeanUtils.copyProperties(attrVo,attrEntity);
+        //保存基本数据
+        attrDao.insert(attrEntity);
+      //  this.save(attrEntity);
+        //保存关联关系
+        AttrAttrgroupRelationEntity relationEntity = new AttrAttrgroupRelationEntity();
+        relationEntity.setAttrGroupId(attrVo.getAttrGroupId());
+        relationEntity.setAttrId(attrEntity.getAttrId());
+        attrAttrgroupRelationDao.insert(relationEntity);
+    }
 
-
+    @Override
+    public PageUtils queryBaseAttrPage(Map<String, Object> params, Long catelogId) {
+        QueryWrapper<AttrEntity> queryWrapper = new QueryWrapper<>();
+        if (catelogId!=0){
+            queryWrapper.eq("catelog_id",catelogId);
+        }
+        String key = (String)params.get("key");
+        if (!StringUtils.isEmpty(key)){
+            queryWrapper.and((wapper)->{
+                wapper.eq("attr_id",key).or()
+                        .like("attr_name",key);
+            });
+        }
+        IPage<AttrEntity> page = this.page(
+                new Query<AttrEntity>().getPage(params),
+                queryWrapper
+        );
+        PageUtils pageUtils = new PageUtils(page);
+        List<AttrEntity> records = (List<AttrEntity>) pageUtils.getList();
+        List<AttrRespVo> resList = new ArrayList<>();
+        records.stream().forEach(attrEntity -> {
+            AttrRespVo attrRespVo = new AttrRespVo();
+            BeanUtils.copyProperties(attrEntity,attrRespVo);
+            AttrAttrgroupRelationEntity attrId = attrAttrgroupRelationDao.selectOne(new QueryWrapper<AttrAttrgroupRelationEntity>()
+                    .eq("attr_id", attrEntity.getAttrId()));
+            if (attrId!=null){
+                AttrGroupEntity attrGroupEntity = attrGroupDao.selectById(attrId.getAttrGroupId());
+                attrRespVo.setGroupName(attrGroupEntity.getAttrGroupName());
+            }
+            CategoryEntity categoryEntity = categoryDao.selectById(attrEntity.getCatelogId());
+            if (categoryEntity!=null){
+                attrRespVo.setCatelogName(categoryEntity.getName());
+            }
+            resList.add(attrRespVo);
+        });
+        pageUtils.setList(resList);
+        return pageUtils;
+    }
 
 
 }
