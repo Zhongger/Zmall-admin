@@ -3,6 +3,7 @@ package com.zhongger.zmail.product.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.zhongger.zmail.common.utils.PageUtils;
 import com.zhongger.zmail.product.entity.AttrAttrgroupRelationEntity;
+import com.zhongger.zmail.product.vo.AttrGroupRelationVo;
 
 import java.util.Map;
 
@@ -18,6 +19,6 @@ public interface AttrAttrgroupRelationService extends IService<AttrAttrgroupRela
     PageUtils queryPage(Map<String, Object> params);
 
 
-
+    void deleteRelation(AttrGroupRelationVo[] attrGroupRelationVos);
 }
 

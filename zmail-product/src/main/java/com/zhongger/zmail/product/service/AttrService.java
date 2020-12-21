@@ -7,6 +7,7 @@ import com.zhongger.zmail.product.entity.AttrEntity;
 import com.zhongger.zmail.product.vo.AttrRespVo;
 import com.zhongger.zmail.product.vo.AttrVo;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -28,6 +29,8 @@ public interface AttrService extends IService<AttrEntity> {
     AttrRespVo getAttrInfo(Long attrId);
 
     void updateAttr(AttrVo attrVo);
+
+    List<AttrEntity> getRelationAttr(Long attrgroupId);
 }
 
 
