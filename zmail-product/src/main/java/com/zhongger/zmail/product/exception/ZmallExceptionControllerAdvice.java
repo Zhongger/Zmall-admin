@@ -15,8 +15,8 @@ import java.util.HashMap;
  * 全局异常处理，指定com.zhongger.zmail.product.controller包下的异常
  */
 @Slf4j
-@RestController
-@ControllerAdvice(basePackages = "com.zhongger.zmail.product.controller" )
+//@RestController
+//@ControllerAdvice(basePackages = "com.zhongger.zmail.product.controller" )
 public class ZmallExceptionControllerAdvice {
     @ExceptionHandler(value = MethodArgumentNotValidException.class)
     public R handleVaildException(MethodArgumentNotValidException e){
