@@ -9,6 +9,7 @@ import com.zhongger.zmail.product.service.AttrGroupService;
 import com.zhongger.zmail.product.service.AttrService;
 import com.zhongger.zmail.product.service.CategoryService;
 import com.zhongger.zmail.product.vo.AttrGroupRelationVo;
+import com.zhongger.zmail.product.vo.AttrGroupWithAttrsVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -39,8 +40,14 @@ public class AttrGroupController {
     @Autowired
     AttrAttrgroupRelationService relationService;
 
+    @GetMapping("/{catelogId}/withattr")
+    public R getAttrGroupWithAttrs(@PathVariable("catelogId") Long catelogId) {
+        List<AttrGroupWithAttrsVo> list = attrGroupService.getAttrGroupWithAttrsByCatelogId(catelogId);
+        return R.ok().put("data", list);
+    }
+
     @PostMapping("/attr/relation")
-    public R addRelation(@RequestBody List<AttrGroupRelationVo> vos){
+    public R addRelation(@RequestBody List<AttrGroupRelationVo> vos) {
 
         relationService.saveBatch(vos);
         return R.ok();
