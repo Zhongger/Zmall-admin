@@ -159,12 +159,12 @@ public class AttrServiceImpl extends ServiceImpl<AttrDao, AttrEntity> implements
         this.updateById(attrEntity);
         if (attrEntity.getAttrType() == ProductConstant.AttrEnum.ATTR_TYPE_BASE.getCode()) {
             AttrAttrgroupRelationEntity attrAttrgroupRelationEntity = new AttrAttrgroupRelationEntity();
-
+            attrAttrgroupRelationEntity.setAttrGroupId(attrVo.getAttrGroupId());
+            attrAttrgroupRelationEntity.setAttrId(attrVo.getAttrId());
             Integer count = attrAttrgroupRelationDao.selectCount(new QueryWrapper<AttrAttrgroupRelationEntity>()
                     .eq("attr_id", attrVo.getAttrId()));
             if (count > 0) {
-                attrAttrgroupRelationEntity.setAttrGroupId(attrVo.getAttrGroupId());
-                attrAttrgroupRelationEntity.setAttrId(attrVo.getAttrId());
+
                 attrAttrgroupRelationDao.update(attrAttrgroupRelationEntity, new UpdateWrapper<AttrAttrgroupRelationEntity>()
                         .eq("attr_id", attrVo.getAttrId()));
             } else {
