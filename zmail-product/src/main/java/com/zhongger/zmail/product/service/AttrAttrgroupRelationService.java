@@ -5,6 +5,7 @@ import com.zhongger.zmail.common.utils.PageUtils;
 import com.zhongger.zmail.product.entity.AttrAttrgroupRelationEntity;
 import com.zhongger.zmail.product.vo.AttrGroupRelationVo;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -20,5 +21,7 @@ public interface AttrAttrgroupRelationService extends IService<AttrAttrgroupRela
 
 
     void deleteRelation(AttrGroupRelationVo[] attrGroupRelationVos);
+
+    void saveBatch(List<AttrGroupRelationVo> vos);
 }
 

@@ -21,6 +21,5 @@ public interface AttrGroupService extends IService<AttrGroupEntity> {
 
 
 
-
 }
 
