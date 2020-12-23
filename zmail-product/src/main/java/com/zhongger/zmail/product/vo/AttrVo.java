@@ -1,9 +1,13 @@
 package com.zhongger.zmail.product.vo;
 
+
 import lombok.Data;
 
 @Data
 public class AttrVo {
+    /**
+     * 属性id
+     */
     private Long attrId;
     /**
      * 属性名

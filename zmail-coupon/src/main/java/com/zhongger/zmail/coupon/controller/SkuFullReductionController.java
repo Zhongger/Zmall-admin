@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Map;
 
 
+import com.zhongger.zmail.common.to.SkuReductionTo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,7 +29,11 @@ public class SkuFullReductionController {
     private SkuFullReductionService skuFullReductionService;
 
 
-
+    @PostMapping("/saveInfo")
+    public R saveInfo(@RequestBody SkuReductionTo skuReductionTo){
+        skuFullReductionService.saveSkuReduction(skuReductionTo);
+        return R.ok();
+    }
 
 
     /**

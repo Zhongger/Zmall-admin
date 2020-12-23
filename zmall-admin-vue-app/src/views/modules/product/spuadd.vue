@@ -48,13 +48,13 @@
                 <template slot="prepend">成长值</template>
               </el-input-number>
             </el-form-item>
-            <!--            <el-form-item label="商品介绍" prop="decript">-->
-            <!--              <multi-upload v-model="spu.decript"></multi-upload>-->
-            <!--            </el-form-item>-->
+                <el-form-item label="商品介绍" prop="decript">
+                  <multi-upload v-model="spu.decript"></multi-upload>
+                </el-form-item>
 
-            <!--            <el-form-item label="商品图集" prop="images">-->
-            <!--              <multi-upload v-model="spu.images"></multi-upload>-->
-            <!--            </el-form-item>-->
+                <el-form-item label="商品图集" prop="images">
+                  <multi-upload v-model="spu.images"></multi-upload>
+                </el-form-item>
             <el-form-item>
               <el-button type="success" @click="collectSpuBaseInfo">下一步：设置基本参数</el-button>
             </el-form-item>
@@ -361,6 +361,7 @@
     props: {},
     data() {
       return {
+
         catPathSub: null,
         brandIdSub: null,
         uploadDialogVisible: false,
@@ -681,9 +682,8 @@
           }).then(({data}) => {
             //先对表单的baseAttrs进行初始化
             if (data.data) {
-              this.dataResp.attrGroups=data.data;
-
               data.data.forEach(item => {
+                this.dataResp.attrGroups.push(item);
                 if (item.attrs) {
                   let attrArray = [];
                   item.attrs.forEach(attr => {
@@ -696,7 +696,6 @@
                   this.dataResp.baseAttrs.push(attrArray);
                 }
               });
-
               this.dataResp.steped[0] = true;
             }
           });

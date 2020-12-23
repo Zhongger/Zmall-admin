@@ -1,6 +1,7 @@
 package com.zhongger.zmail.coupon.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.zhongger.zmail.common.to.SkuReductionTo;
 import com.zhongger.zmail.common.utils.PageUtils;
 import com.zhongger.zmail.coupon.entity.SkuFullReductionEntity;
 
@@ -18,7 +19,6 @@ public interface SkuFullReductionService extends IService<SkuFullReductionEntity
     PageUtils queryPage(Map<String, Object> params);
 
 
-
-
+    void saveSkuReduction(SkuReductionTo skuReductionTo);
 }
 

@@ -1,18 +1,39 @@
 package com.zhongger.zmail.product.vo;
 
+
 import com.zhongger.zmail.product.entity.AttrEntity;
-import com.zhongger.zmail.product.entity.AttrGroupEntity;
+import lombok.Data;
 
 import java.util.List;
 
-public class AttrGroupWithAttrsVo extends AttrGroupEntity {
+
+@Data
+public class AttrGroupWithAttrsVo {
+
+    /**
+     * 分组id
+     */
+    private Long attrGroupId;
+    /**
+     * 组名
+     */
+    private String attrGroupName;
+    /**
+     * 排序
+     */
+    private Integer sort;
+    /**
+     * 描述
+     */
+    private String descript;
+    /**
+     * 组图标
+     */
+    private String icon;
+    /**
+     * 所属分类id
+     */
+    private Long catelogId;
+
     private List<AttrEntity> attrs;
-
-    public List<AttrEntity> getAttrs() {
-        return attrs;
-    }
-
-    public void setAttrs(List<AttrEntity> attrs) {
-        this.attrs = attrs;
-    }
 }

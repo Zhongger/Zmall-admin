@@ -5,6 +5,7 @@ import com.zhongger.zmail.common.utils.R;
 import com.zhongger.zmail.product.entity.SpuInfoEntity;
 import com.zhongger.zmail.product.service.SpuInfoService;
 
+import com.zhongger.zmail.product.vo.SpuSaveVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -57,6 +58,12 @@ public class SpuInfoController {
     public R delete(@RequestBody Long[] ids){
 		spuInfoService.removeByIds(Arrays.asList(ids));
 
+        return R.ok();
+    }
+
+    @RequestMapping("/save")
+    public R save(@RequestBody SpuSaveVo spuSaveVo){
+        spuInfoService.saveSpuInfo(spuSaveVo);
         return R.ok();
     }
 
