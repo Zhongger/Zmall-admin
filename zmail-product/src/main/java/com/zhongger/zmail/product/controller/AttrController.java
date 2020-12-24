@@ -2,6 +2,7 @@ package com.zhongger.zmail.product.controller;
 
 import com.zhongger.zmail.common.utils.PageUtils;
 import com.zhongger.zmail.common.utils.R;
+import com.zhongger.zmail.product.entity.ProductAttrValueEntity;
 import com.zhongger.zmail.product.service.AttrService;
 import com.zhongger.zmail.product.service.ProductAttrValueService;
 import com.zhongger.zmail.product.vo.AttrRespVo;
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 
@@ -29,6 +31,14 @@ public class AttrController {
     @Autowired
     ProductAttrValueService productAttrValueService;
 
+    @GetMapping("/base/listforspu/{spuId}")
+    public R baseAttrlistforspu(@PathVariable("spuId") Long spuId){
+
+        List<ProductAttrValueEntity> entities = productAttrValueService.baseAttrlistforspu(spuId);
+
+        return R.ok().put("data",entities);
+    }
+
     @RequestMapping("/save")
     public R save(@RequestBody AttrVo attrVo) {
         attrService.saveAttr(attrVo);
@@ -38,6 +48,15 @@ public class AttrController {
     @RequestMapping("/update")
     public R update(@RequestBody AttrVo attrVo) {
         attrService.updateAttr(attrVo);
+        return R.ok();
+    }
+
+    @PostMapping("/update/{spuId}")
+    public R updateSpuAttr(@PathVariable("spuId") Long spuId,
+                           @RequestBody List<ProductAttrValueEntity> entities){
+
+        productAttrValueService.updateSpuAttr(spuId,entities);
+
         return R.ok();
     }
 
