@@ -5,6 +5,8 @@ import com.zhongger.zmail.common.utils.R;
 import com.zhongger.zmail.ware.entity.PurchaseEntity;
 import com.zhongger.zmail.ware.service.PurchaseService;
 
+import com.zhongger.zmail.ware.vo.MergeVo;
+import com.zhongger.zmail.ware.vo.PurchaseDoneVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,8 +30,35 @@ public class PurchaseController {
     private PurchaseService purchaseService;
 
 
+    @PostMapping("/done")
+    public R finish(@RequestBody PurchaseDoneVo doneVo){
+
+        purchaseService.done(doneVo);
+
+        return R.ok();
+    }
 
 
+    /**
+     * 领取采购单
+     * @return
+     */
+    @PostMapping("/received")
+    public R received(@RequestBody List<Long> ids){
+
+        purchaseService.received(ids);
+
+        return R.ok();
+    }
+
+
+
+    @PostMapping("/merge")
+    public R merge(@RequestBody MergeVo mergeVo){
+
+        purchaseService.mergePurchase(mergeVo);
+        return R.ok();
+    }
 
 
     @RequestMapping("/unreceive/list")
