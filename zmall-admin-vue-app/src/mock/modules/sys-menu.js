@@ -500,7 +500,7 @@ var navDataList = [
 ]
 
 // 获取导航菜单列表 / 权限
-export function nav () {
+export function nav() {
   return {
     // isOpen: false,
     url: '/sys/menu/nav',
@@ -549,7 +549,7 @@ export function nav () {
 }
 
 // 获取菜单列表
-export function list () {
+export function list() {
   return {
     // isOpen: false,
     url: '/sys/menu/list',
@@ -559,7 +559,7 @@ export function list () {
 }
 
 // 获取上级菜单
-export function select () {
+export function select() {
   let dataList = JSON.parse(JSON.stringify(navDataList))
   dataList = dataList.concat(dataList[0].list)
   return {
@@ -575,7 +575,7 @@ export function select () {
 }
 
 // 获取菜单信息
-export function info () {
+export function info() {
   return {
     // isOpen: false,
     url: '/sys/menu/info',
@@ -589,7 +589,7 @@ export function info () {
 }
 
 // 添加菜单
-export function add () {
+export function add() {
   return {
     // isOpen: false,
     url: '/sys/menu/save',
@@ -602,7 +602,7 @@ export function add () {
 }
 
 // 修改菜单
-export function update () {
+export function update() {
   return {
     // isOpen: false,
     url: '/sys/menu/update',
@@ -615,7 +615,7 @@ export function update () {
 }
 
 // 删除菜单
-export function del () {
+export function del() {
   return {
     // isOpen: false,
     url: '/sys/menu/delete',

@@ -1,7 +1,7 @@
 import Mock from 'mockjs'
 
 // 登录
-export function login () {
+export function login() {
   return {
     // isOpen: false,
     url: '/sys/login',
@@ -16,7 +16,7 @@ export function login () {
 }
 
 // 退出
-export function logout () {
+export function logout() {
   return {
     // isOpen: false,
     url: '/sys/logout',

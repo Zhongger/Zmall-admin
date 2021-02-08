@@ -11,7 +11,7 @@ for (let i = 0; i < Math.floor(Math.random() * 10 + 1); i++) {
 }
 
 // 获取文件列表
-export function list () {
+export function list() {
   return {
     // isOpen: false,
     url: '/sys/oss/list',
@@ -31,7 +31,7 @@ export function list () {
 }
 
 // 获取云存储配置信息
-export function config () {
+export function config() {
   return {
     // isOpen: false,
     url: '/sys/oss/config',
@@ -65,7 +65,7 @@ export function config () {
 }
 
 // 保存云存储配置信息
-export function addConfig () {
+export function addConfig() {
   return {
     // isOpen: false,
     url: '/sys/oss/saveConfig',
@@ -78,7 +78,7 @@ export function addConfig () {
 }
 
 // 删除文件
-export function del () {
+export function del() {
   return {
     // isOpen: false,
     url: '/sys/oss/delete',

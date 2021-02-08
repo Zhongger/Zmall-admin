@@ -3,6 +3,7 @@
 *:after {
   box-sizing: border-box;
 }
+
 body {
   font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
   font-size: 14px;
@@ -10,15 +11,18 @@ body {
   color: #303133;
   background-color: #fff;
 }
+
 a {
   color: mix(#fff, $--color-primary, 20%);
   text-decoration: none;
+
   &:focus,
   &:hover {
     color: $--color-primary;
     text-decoration: underline;
   }
 }
+
 img {
   vertical-align: middle;
 }
@@ -31,6 +35,7 @@ img {
   content: " ";
   display: table;
 }
+
 .clearfix:after {
   clear: both;
 }
@@ -42,6 +47,7 @@ img {
 .fade-leave-active {
   transition: opacity .5s;
 }
+
 .fade-enter,
 .fade-leave-to {
   opacity: 0;
@@ -76,30 +82,37 @@ img {
   .el-menu.site-sidebar__menu {
     width: 64px;
   }
+
   .site-navbar__body,
   .site-content__wrapper {
     margin-left: 64px;
   }
+
   .site-navbar__brand {
     &-lg {
       display: none;
     }
+
     &-mini {
       display: inline-block;
     }
   }
+
   .site-sidebar,
   .site-sidebar__inner {
     overflow: initial;
   }
+
   .site-sidebar__menu-icon {
     margin-right: 0;
     font-size: 20px;
   }
+
   .site-content--tabs > .el-tabs > .el-tabs__header {
     left: 64px;
   }
 }
+
 // animation
 .site-navbar__header,
 .site-navbar__brand,
@@ -130,26 +143,31 @@ img {
     .site-navbar__body {
       background-color: transparent;
     }
+
     .el-menu {
       > .el-menu-item,
       > .el-submenu > .el-submenu__title {
         color: #fff;
+
         &:focus,
         &:hover {
           color: #fff;
           background-color: mix(#000, $navbar--background-color, 15%);
         }
       }
+
       > .el-menu-item.is-active,
       > .el-submenu.is-active > .el-submenu__title {
         border-bottom-color: mix(#fff, $navbar--background-color, 85%);
       }
+
       .el-menu-item i,
       .el-submenu__title i,
       .el-dropdown {
         color: #fff;
       }
     }
+
     .el-menu--popup-bottom-start {
       background-color: $navbar--background-color;
     }
@@ -162,6 +180,7 @@ img {
     height: 50px;
     overflow: hidden;
   }
+
   &__brand {
     display: table-cell;
     vertical-align: middle;
@@ -179,25 +198,31 @@ img {
     &-mini {
       margin: 0 5px;
       color: #fff;
+
       &:focus,
       &:hover {
         color: #fff;
         text-decoration: none;
       }
     }
+
     &-mini {
       display: none;
     }
   }
+
   &__switch {
     font-size: 18px;
     border-bottom: none !important;
   }
+
   &__avatar {
     border-bottom: none !important;
+
     * {
       vertical-align: inherit;
     }
+
     .el-dropdown-link {
       > img {
         width: 36px;
@@ -208,12 +233,14 @@ img {
       }
     }
   }
+
   &__body {
     position: relative;
     margin-left: 230px;
     padding-right: 15px;
     background-color: #fff;
   }
+
   &__menu {
     float: left;
     background-color: transparent;
@@ -222,21 +249,26 @@ img {
     &--right {
       float: right;
     }
+
     a:focus,
     a:hover {
       text-decoration: none;
     }
+
     .el-menu-item,
     .el-submenu > .el-submenu__title {
       height: 50px;
       line-height: 50px;
     }
+
     .el-submenu > .el-menu {
       top: 55px;
     }
+
     .el-badge {
       display: inline;
       z-index: 2;
+
       &__content {
         line-height: 16px;
       }
@@ -259,28 +291,34 @@ img {
   &--dark,
   &--dark-popper {
     background-color: $sidebar--background-color-dark;
+
     .site-sidebar__menu.el-menu,
     > .el-menu--popup {
       background-color: $sidebar--background-color-dark;
+
       .el-menu-item,
       .el-submenu > .el-submenu__title {
         color: $sidebar--color-text-dark;
+
         &:focus,
         &:hover {
           color: mix(#fff, $sidebar--color-text-dark, 50%);
           background-color: mix(#fff, $sidebar--background-color-dark, 2.5%);
         }
       }
+
       .el-menu,
       .el-submenu.is-opened {
         background-color: mix(#000, $sidebar--background-color-dark, 15%);
       }
+
       .el-menu-item.is-active,
       .el-submenu.is-active > .el-submenu__title {
         color: mix(#fff, $sidebar--color-text-dark, 80%);
       }
     }
   }
+
   &__inner {
     position: relative;
     z-index: 1;
@@ -289,10 +327,12 @@ img {
     padding-bottom: 15px;
     overflow-y: scroll;
   }
+
   &__menu.el-menu {
     width: 230px;
     border-right: 0;
   }
+
   &__menu-icon {
     width: 24px;
     margin-right: 5px;
@@ -316,9 +356,11 @@ img {
     min-height: 100%;
     background: $content--background-color;
   }
+
   &--tabs {
     padding: 55px 0 0;
   }
+
   > .el-tabs {
     > .el-tabs__header {
       position: fixed;
@@ -329,15 +371,19 @@ img {
       padding: 0 55px 0 15px;
       box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .12), 0 0 6px 0 rgba(0, 0, 0, .04);
       background-color: #fff;
+
       > .el-tabs__nav-wrap {
         margin-bottom: 0;
+
         &:after {
           display: none;
         }
       }
     }
+
     > .el-tabs__content {
       padding: 0 15px 15px;
+
       > .site-tabs__tools {
         position: fixed;
         top: 50px;
@@ -349,6 +395,7 @@ img {
         line-height: 40px;
         background-color: $content--background-color;
         cursor: pointer;
+
         .el-icon--right {
           margin-left: 0;
         }
@@ -356,6 +403,7 @@ img {
     }
   }
 }
+
 .el-table__expand-icon {
   display: inline-block;
   width: 14px;

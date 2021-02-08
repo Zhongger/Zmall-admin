@@ -1,12 +1,12 @@
 var gulp = require('gulp');
-var $    = require('gulp-load-plugins')();
+var $ = require('gulp-load-plugins')();
 var path = require('path');
-var del  = require('del');
+var del = require('del');
 
-var distPath    = path.resolve('./dist');
-var version     = ''; // 版本号
+var distPath = path.resolve('./dist');
+var version = ''; // 版本号
 var versionPath = ''; // 版本号路径
-var env         = ''; // 运行环境
+var env = ''; // 运行环境
 
 // 创建版本号(年月日时分)
 (function () {
@@ -14,14 +14,14 @@ var env         = ''; // 运行环境
   var yy = d.getFullYear().toString().slice(2);
   var MM = d.getMonth() + 1 >= 10 ? (d.getMonth() + 1) : '0' + (d.getMonth() + 1);
   var DD = d.getDate() >= 10 ? d.getDate() : '0' + d.getDate();
-  var h  = d.getHours() >= 10 ? d.getHours() : '0' + d.getHours();
+  var h = d.getHours() >= 10 ? d.getHours() : '0' + d.getHours();
   var mm = d.getMinutes() >= 10 ? d.getMinutes() : '0' + d.getMinutes();
   version = yy + MM + DD + h + mm;
   versionPath = distPath + '/' + version;
 })();
 
 // 编译
-gulp.task('build', $.shell.task([ 'node build/build.js' ]));
+gulp.task('build', $.shell.task(['node build/build.js']));
 
 // 创建版本号目录
 gulp.task('create:versionCatalog', ['build'], function () {

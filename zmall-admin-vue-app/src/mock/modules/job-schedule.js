@@ -17,7 +17,7 @@ for (let i = 0; i < Math.floor(Math.random() * 10 + 1); i++) {
 }
 
 // 获取定时任务列表
-export function list () {
+export function list() {
   return {
     // isOpen: false,
     url: '/sys/schedule/list',
@@ -37,7 +37,7 @@ export function list () {
 }
 
 // 获取定时任务信息
-export function info () {
+export function info() {
   return {
     // isOpen: false,
     url: '/sys/schedule/info',
@@ -51,7 +51,7 @@ export function info () {
 }
 
 // 添加定时任务
-export function add () {
+export function add() {
   return {
     // isOpen: false,
     url: '/sys/schedule/save',
@@ -64,7 +64,7 @@ export function add () {
 }
 
 // 修改定时任务
-export function update () {
+export function update() {
   return {
     // isOpen: false,
     url: '/sys/schedule/update',
@@ -77,7 +77,7 @@ export function update () {
 }
 
 // 删除定时任务
-export function del () {
+export function del() {
   return {
     // isOpen: false,
     url: '/sys/schedule/delete',
@@ -90,7 +90,7 @@ export function del () {
 }
 
 // 运行定时任务
-export function run () {
+export function run() {
   return {
     // isOpen: false,
     url: '/sys/schedule/run',
@@ -103,7 +103,7 @@ export function run () {
 }
 
 // 暂停定时任务
-export function pause () {
+export function pause() {
   return {
     // isOpen: false,
     url: '/sys/schedule/pause',
@@ -116,7 +116,7 @@ export function pause () {
 }
 
 // 恢复定时任务
-export function resume () {
+export function resume() {
   return {
     // isOpen: false,
     url: '/sys/schedule/resume',

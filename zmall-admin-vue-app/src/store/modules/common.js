@@ -19,31 +19,31 @@ export default {
     mainTabsActiveName: ''
   },
   mutations: {
-    updateDocumentClientHeight (state, height) {
+    updateDocumentClientHeight(state, height) {
       state.documentClientHeight = height
     },
-    updateNavbarLayoutType (state, type) {
+    updateNavbarLayoutType(state, type) {
       state.navbarLayoutType = type
     },
-    updateSidebarLayoutSkin (state, skin) {
+    updateSidebarLayoutSkin(state, skin) {
       state.sidebarLayoutSkin = skin
     },
-    updateSidebarFold (state, fold) {
+    updateSidebarFold(state, fold) {
       state.sidebarFold = fold
     },
-    updateMenuList (state, list) {
+    updateMenuList(state, list) {
       state.menuList = list
     },
-    updateMenuActiveName (state, name) {
+    updateMenuActiveName(state, name) {
       state.menuActiveName = name
     },
-    updateContentIsNeedRefresh (state, status) {
+    updateContentIsNeedRefresh(state, status) {
       state.contentIsNeedRefresh = status
     },
-    updateMainTabs (state, tabs) {
+    updateMainTabs(state, tabs) {
       state.mainTabs = tabs
     },
-    updateMainTabsActiveName (state, name) {
+    updateMainTabsActiveName(state, name) {
       state.mainTabsActiveName = name
     }
   }

@@ -12,7 +12,7 @@ for (let i = 0; i < Math.floor(Math.random() * 10 + 1); i++) {
 }
 
 // 获取参数列表
-export function list () {
+export function list() {
   return {
     // isOpen: false,
     url: '/sys/config/list',
@@ -32,7 +32,7 @@ export function list () {
 }
 
 // 获取参数信息
-export function info () {
+export function info() {
   return {
     // isOpen: false,
     url: '/sys/config/info',
@@ -46,7 +46,7 @@ export function info () {
 }
 
 // 添加参数
-export function add () {
+export function add() {
   return {
     // isOpen: false,
     url: '/sys/config/save',
@@ -59,7 +59,7 @@ export function add () {
 }
 
 // 修改参数
-export function update () {
+export function update() {
   return {
     // isOpen: false,
     url: '/sys/config/update',
@@ -72,7 +72,7 @@ export function update () {
 }
 
 // 删除参数
-export function del () {
+export function del() {
   return {
     // isOpen: false,
     url: '/sys/config/delete',
