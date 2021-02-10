@@ -12,121 +12,119 @@ import java.util.Date;
 
 /**
  * 定时任务日志
- *
-
  */
 @Data
 @TableName("schedule_job_log")
 public class ScheduleJobLogEntity implements Serializable {
-	private static final long serialVersionUID = 1L;
-	
-	/**
-	 * 日志id
-	 */
-	@TableId
-	private Long logId;
-	
-	/**
-	 * 任务id
-	 */
-	private Long jobId;
-	
-	/**
-	 * spring bean名称
-	 */
-	private String beanName;
-	
-	/**
-	 * 参数
-	 */
-	private String params;
-	
-	/**
-	 * 任务状态    0：成功    1：失败
-	 */
-	private Integer status;
-	
-	/**
-	 * 失败信息
-	 */
-	private String error;
-	
-	/**
-	 * 耗时(单位：毫秒)
-	 */
-	private Integer times;
-	
-	/**
-	 * 创建时间
-	 */
-	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-	private Date createTime;
+    private static final long serialVersionUID = 1L;
 
-	public static long getSerialVersionUID() {
-		return serialVersionUID;
-	}
+    /**
+     * 日志id
+     */
+    @TableId
+    private Long logId;
 
-	public Long getLogId() {
-		return logId;
-	}
+    /**
+     * 任务id
+     */
+    private Long jobId;
 
-	public void setLogId(Long logId) {
-		this.logId = logId;
-	}
+    /**
+     * spring bean名称
+     */
+    private String beanName;
 
-	public Long getJobId() {
-		return jobId;
-	}
+    /**
+     * 参数
+     */
+    private String params;
 
-	public void setJobId(Long jobId) {
-		this.jobId = jobId;
-	}
+    /**
+     * 任务状态    0：成功    1：失败
+     */
+    private Integer status;
 
-	public String getBeanName() {
-		return beanName;
-	}
+    /**
+     * 失败信息
+     */
+    private String error;
 
-	public void setBeanName(String beanName) {
-		this.beanName = beanName;
-	}
+    /**
+     * 耗时(单位：毫秒)
+     */
+    private Integer times;
 
-	public String getParams() {
-		return params;
-	}
+    /**
+     * 创建时间
+     */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    private Date createTime;
 
-	public void setParams(String params) {
-		this.params = params;
-	}
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
 
-	public Integer getStatus() {
-		return status;
-	}
+    public Long getLogId() {
+        return logId;
+    }
 
-	public void setStatus(Integer status) {
-		this.status = status;
-	}
+    public void setLogId(Long logId) {
+        this.logId = logId;
+    }
 
-	public String getError() {
-		return error;
-	}
+    public Long getJobId() {
+        return jobId;
+    }
 
-	public void setError(String error) {
-		this.error = error;
-	}
+    public void setJobId(Long jobId) {
+        this.jobId = jobId;
+    }
 
-	public Integer getTimes() {
-		return times;
-	}
+    public String getBeanName() {
+        return beanName;
+    }
 
-	public void setTimes(Integer times) {
-		this.times = times;
-	}
+    public void setBeanName(String beanName) {
+        this.beanName = beanName;
+    }
 
-	public Date getCreateTime() {
-		return createTime;
-	}
+    public String getParams() {
+        return params;
+    }
 
-	public void setCreateTime(Date createTime) {
-		this.createTime = createTime;
-	}
+    public void setParams(String params) {
+        this.params = params;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    public String getError() {
+        return error;
+    }
+
+    public void setError(String error) {
+        this.error = error;
+    }
+
+    public Integer getTimes() {
+        return times;
+    }
+
+    public void setTimes(Integer times) {
+        this.times = times;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
 }

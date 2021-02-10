@@ -8,8 +8,8 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @SpringBootApplication
 public class ZmailCouponApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(ZmailCouponApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(ZmailCouponApplication.class, args);
+    }
 
 }

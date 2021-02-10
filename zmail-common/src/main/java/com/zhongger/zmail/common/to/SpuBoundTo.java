@@ -3,6 +3,7 @@ package com.zhongger.zmail.common.to;
 import lombok.Data;
 
 import java.math.BigDecimal;
+
 @Data
 public class SpuBoundTo {
     private Long spuId;

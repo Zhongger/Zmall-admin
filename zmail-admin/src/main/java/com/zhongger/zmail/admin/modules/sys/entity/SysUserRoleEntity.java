@@ -1,8 +1,8 @@
 /**
  * Copyright (c) 2016-2019 人人开源 All rights reserved.
- *
+ * <p>
  * https://www.renren.io
- *
+ * <p>
  * 版权所有，侵权必究！
  */
 
@@ -22,45 +22,45 @@ import java.io.Serializable;
 @Data
 @TableName("sys_user_role")
 public class SysUserRoleEntity implements Serializable {
-	private static final long serialVersionUID = 1L;
-	@TableId
-	private Long id;
+    private static final long serialVersionUID = 1L;
+    @TableId
+    private Long id;
 
-	/**
-	 * 用户ID
-	 */
-	private Long userId;
+    /**
+     * 用户ID
+     */
+    private Long userId;
 
-	/**
-	 * 角色ID
-	 */
-	private Long roleId;
+    /**
+     * 角色ID
+     */
+    private Long roleId;
 
-	public static long getSerialVersionUID() {
-		return serialVersionUID;
-	}
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
 
-	public Long getId() {
-		return id;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public Long getUserId() {
-		return userId;
-	}
+    public Long getUserId() {
+        return userId;
+    }
 
-	public void setUserId(Long userId) {
-		this.userId = userId;
-	}
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
 
-	public Long getRoleId() {
-		return roleId;
-	}
+    public Long getRoleId() {
+        return roleId;
+    }
 
-	public void setRoleId(Long roleId) {
-		this.roleId = roleId;
-	}
+    public void setRoleId(Long roleId) {
+        this.roleId = roleId;
+    }
 }

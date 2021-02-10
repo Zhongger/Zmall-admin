@@ -13,17 +13,17 @@ import org.springframework.context.annotation.Bean;
 public class ZmailGatewayApplication {
 
 
-	@Bean
-	public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
-		// 关键是下面几行代码
-		return builder.routes()
-				.route("remoteaddr_route", r -> r.remoteAddr("127.0.0.1")
-						.uri("http://baidu.com"))
-				.build();
-	}
+    @Bean
+    public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
+        // 关键是下面几行代码
+        return builder.routes()
+                .route("remoteaddr_route", r -> r.remoteAddr("127.0.0.1")
+                        .uri("http://baidu.com"))
+                .build();
+    }
 
-	public static void main(String[] args) {
-		SpringApplication.run(ZmailGatewayApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(ZmailGatewayApplication.class, args);
+    }
 
 }

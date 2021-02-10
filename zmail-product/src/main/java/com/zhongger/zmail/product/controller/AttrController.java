@@ -32,11 +32,11 @@ public class AttrController {
     ProductAttrValueService productAttrValueService;
 
     @GetMapping("/base/listforspu/{spuId}")
-    public R baseAttrlistforspu(@PathVariable("spuId") Long spuId){
+    public R baseAttrlistforspu(@PathVariable("spuId") Long spuId) {
 
         List<ProductAttrValueEntity> entities = productAttrValueService.baseAttrlistforspu(spuId);
 
-        return R.ok().put("data",entities);
+        return R.ok().put("data", entities);
     }
 
     @RequestMapping("/save")
@@ -53,9 +53,9 @@ public class AttrController {
 
     @PostMapping("/update/{spuId}")
     public R updateSpuAttr(@PathVariable("spuId") Long spuId,
-                           @RequestBody List<ProductAttrValueEntity> entities){
+                           @RequestBody List<ProductAttrValueEntity> entities) {
 
-        productAttrValueService.updateSpuAttr(spuId,entities);
+        productAttrValueService.updateSpuAttr(spuId, entities);
 
         return R.ok();
     }

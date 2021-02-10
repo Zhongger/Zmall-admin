@@ -9,7 +9,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableDiscoveryClient
 @SpringBootApplication
 public class ZmailMemberApplication {
-	public static void main(String[] args) {
-		SpringApplication.run(ZmailMemberApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(ZmailMemberApplication.class, args);
+    }
 }

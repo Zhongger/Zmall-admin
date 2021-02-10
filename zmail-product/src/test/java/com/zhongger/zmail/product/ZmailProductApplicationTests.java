@@ -9,15 +9,16 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class ZmailProductApplicationTests {
 
-	@Autowired
-	private BrandService brandService;
-	@Test
-	void contextLoads() {
-		BrandEntity brandEntity = new BrandEntity();
-		brandEntity.setDescript("你好啊");
-		brandEntity.setName("华为");
-		brandService.save(brandEntity);
-		System.out.println("保存成功");
-	}
+    @Autowired
+    private BrandService brandService;
+
+    @Test
+    void contextLoads() {
+        BrandEntity brandEntity = new BrandEntity();
+        brandEntity.setDescript("你好啊");
+        brandEntity.setName("华为");
+        brandService.save(brandEntity);
+        System.out.println("保存成功");
+    }
 
 }

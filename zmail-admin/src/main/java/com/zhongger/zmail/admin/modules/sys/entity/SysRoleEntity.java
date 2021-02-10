@@ -1,8 +1,8 @@
 /**
  * Copyright (c) 2016-2019 人人开源 All rights reserved.
- *
+ * <p>
  * https://www.renren.io
- *
+ * <p>
  * 版权所有，侵权必究！
  */
 
@@ -26,87 +26,87 @@ import java.util.List;
 @Data
 @TableName("sys_role")
 public class SysRoleEntity implements Serializable {
-	private static final long serialVersionUID = 1L;
-	
-	/**
-	 * 角色ID
-	 */
-	@TableId
-	private Long roleId;
+    private static final long serialVersionUID = 1L;
 
-	/**
-	 * 角色名称
-	 */
-	@NotBlank(message="角色名称不能为空")
-	private String roleName;
+    /**
+     * 角色ID
+     */
+    @TableId
+    private Long roleId;
 
-	/**
-	 * 备注
-	 */
-	private String remark;
-	
-	/**
-	 * 创建者ID
-	 */
-	private Long createUserId;
+    /**
+     * 角色名称
+     */
+    @NotBlank(message = "角色名称不能为空")
+    private String roleName;
 
-	@TableField(exist=false)
-	private List<Long> menuIdList;
-	
-	/**
-	 * 创建时间
-	 */
-	private Date createTime;
+    /**
+     * 备注
+     */
+    private String remark;
 
-	public static long getSerialVersionUID() {
-		return serialVersionUID;
-	}
+    /**
+     * 创建者ID
+     */
+    private Long createUserId;
 
-	public Long getRoleId() {
-		return roleId;
-	}
+    @TableField(exist = false)
+    private List<Long> menuIdList;
 
-	public void setRoleId(Long roleId) {
-		this.roleId = roleId;
-	}
+    /**
+     * 创建时间
+     */
+    private Date createTime;
 
-	public String getRoleName() {
-		return roleName;
-	}
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
 
-	public void setRoleName(String roleName) {
-		this.roleName = roleName;
-	}
+    public Long getRoleId() {
+        return roleId;
+    }
 
-	public String getRemark() {
-		return remark;
-	}
+    public void setRoleId(Long roleId) {
+        this.roleId = roleId;
+    }
 
-	public void setRemark(String remark) {
-		this.remark = remark;
-	}
+    public String getRoleName() {
+        return roleName;
+    }
 
-	public Long getCreateUserId() {
-		return createUserId;
-	}
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
+    }
 
-	public void setCreateUserId(Long createUserId) {
-		this.createUserId = createUserId;
-	}
+    public String getRemark() {
+        return remark;
+    }
 
-	public List<Long> getMenuIdList() {
-		return menuIdList;
-	}
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
 
-	public void setMenuIdList(List<Long> menuIdList) {
-		this.menuIdList = menuIdList;
-	}
+    public Long getCreateUserId() {
+        return createUserId;
+    }
 
-	public Date getCreateTime() {
-		return createTime;
-	}
+    public void setCreateUserId(Long createUserId) {
+        this.createUserId = createUserId;
+    }
 
-	public void setCreateTime(Date createTime) {
-		this.createTime = createTime;
-	}
+    public List<Long> getMenuIdList() {
+        return menuIdList;
+    }
+
+    public void setMenuIdList(List<Long> menuIdList) {
+        this.menuIdList = menuIdList;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
 }

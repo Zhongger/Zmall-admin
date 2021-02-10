@@ -16,7 +16,6 @@ import com.zhongger.zmail.common.utils.PageUtils;
 import com.zhongger.zmail.common.utils.R;
 
 
-
 /**
  * 积分变化历史记录
  *
@@ -35,7 +34,7 @@ public class IntegrationChangeHistoryController {
      */
     @RequestMapping("/list")
     //@RequiresPermissions("member:integrationchangehistory:list")
-    public R list(@RequestParam Map<String, Object> params){
+    public R list(@RequestParam Map<String, Object> params) {
         PageUtils page = integrationChangeHistoryService.queryPage(params);
 
         return R.ok().put("page", page);
@@ -47,8 +46,8 @@ public class IntegrationChangeHistoryController {
      */
     @RequestMapping("/info/{id}")
     //@RequiresPermissions("member:integrationchangehistory:info")
-    public R info(@PathVariable("id") Long id){
-		IntegrationChangeHistoryEntity integrationChangeHistory = integrationChangeHistoryService.getById(id);
+    public R info(@PathVariable("id") Long id) {
+        IntegrationChangeHistoryEntity integrationChangeHistory = integrationChangeHistoryService.getById(id);
 
         return R.ok().put("integrationChangeHistory", integrationChangeHistory);
     }
@@ -58,8 +57,8 @@ public class IntegrationChangeHistoryController {
      */
     @RequestMapping("/save")
     //@RequiresPermissions("member:integrationchangehistory:save")
-    public R save(@RequestBody IntegrationChangeHistoryEntity integrationChangeHistory){
-		integrationChangeHistoryService.save(integrationChangeHistory);
+    public R save(@RequestBody IntegrationChangeHistoryEntity integrationChangeHistory) {
+        integrationChangeHistoryService.save(integrationChangeHistory);
 
         return R.ok();
     }
@@ -69,8 +68,8 @@ public class IntegrationChangeHistoryController {
      */
     @RequestMapping("/update")
     //@RequiresPermissions("member:integrationchangehistory:update")
-    public R update(@RequestBody IntegrationChangeHistoryEntity integrationChangeHistory){
-		integrationChangeHistoryService.updateById(integrationChangeHistory);
+    public R update(@RequestBody IntegrationChangeHistoryEntity integrationChangeHistory) {
+        integrationChangeHistoryService.updateById(integrationChangeHistory);
 
         return R.ok();
     }
@@ -80,8 +79,8 @@ public class IntegrationChangeHistoryController {
      */
     @RequestMapping("/delete")
     //@RequiresPermissions("member:integrationchangehistory:delete")
-    public R delete(@RequestBody Long[] ids){
-		integrationChangeHistoryService.removeByIds(Arrays.asList(ids));
+    public R delete(@RequestBody Long[] ids) {
+        integrationChangeHistoryService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }

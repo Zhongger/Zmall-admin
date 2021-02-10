@@ -3,7 +3,7 @@
 
 <mapper namespace="com.zhongger.zmail.product.dao.CategoryDao">
 
-	<!-- 可根据自己的需求，是否要使用 -->
+    <!-- 可根据自己的需求，是否要使用 -->
     <resultMap type="com.zhongger.zmail.product.entity.CategoryEntity" id="categoryMap">
         <result property="catId" column="cat_id"/>
         <result property="name" column="name"/>

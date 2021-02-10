@@ -50,7 +50,7 @@ public class BrandEntity implements Serializable {
      * 显示状态[0-不显示；1-显示]
      */
 //	@Pattern()
-    @ListValue(vals = {0, 1},groups = {AddGroup.class})
+    @ListValue(vals = {0, 1}, groups = {AddGroup.class})
     private Integer showStatus;
     /**
      * 检索首字母

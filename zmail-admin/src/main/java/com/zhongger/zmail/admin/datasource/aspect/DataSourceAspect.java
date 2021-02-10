@@ -3,7 +3,6 @@
 package com.zhongger.zmail.admin.datasource.aspect;
 
 
-
 import com.zhongger.zmail.admin.datasource.annotation.DataSource;
 import com.zhongger.zmail.admin.datasource.config.DynamicContextHolder;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -42,13 +41,13 @@ public class DataSourceAspect {
         Class targetClass = point.getTarget().getClass();
         Method method = signature.getMethod();
 
-        DataSource targetDataSource = (DataSource)targetClass.getAnnotation(DataSource.class);
+        DataSource targetDataSource = (DataSource) targetClass.getAnnotation(DataSource.class);
         DataSource methodDataSource = method.getAnnotation(DataSource.class);
-        if(targetDataSource != null || methodDataSource != null){
+        if (targetDataSource != null || methodDataSource != null) {
             String value;
-            if(methodDataSource != null){
+            if (methodDataSource != null) {
                 value = methodDataSource.value();
-            }else {
+            } else {
                 value = targetDataSource.value();
             }
 

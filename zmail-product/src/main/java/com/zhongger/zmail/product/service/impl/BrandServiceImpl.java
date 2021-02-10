@@ -27,8 +27,8 @@ public class BrandServiceImpl extends ServiceImpl<BrandDao, BrandEntity> impleme
         //1、获取key
         String key = (String) params.get("key");
         QueryWrapper<BrandEntity> queryWrapper = new QueryWrapper<>();
-        if(!StringUtils.isEmpty(key)){
-            queryWrapper.eq("brand_id",key).or().like("name",key);
+        if (!StringUtils.isEmpty(key)) {
+            queryWrapper.eq("brand_id", key).or().like("name", key);
         }
 
         IPage<BrandEntity> page = this.page(
@@ -44,7 +44,7 @@ public class BrandServiceImpl extends ServiceImpl<BrandDao, BrandEntity> impleme
     public void updateDetail(BrandEntity brandEntity) {
         //保证冗余字段的数据一致
         this.updateById(brandEntity);
-        if (!StringUtils.isEmpty(brandEntity.getName())){
+        if (!StringUtils.isEmpty(brandEntity.getName())) {
             //同步更新其他关联表的数据
             categoryBrandRelationService.updateBrand(brandEntity.getBrandId(), brandEntity.getName());
             //TODO 更新其他关联

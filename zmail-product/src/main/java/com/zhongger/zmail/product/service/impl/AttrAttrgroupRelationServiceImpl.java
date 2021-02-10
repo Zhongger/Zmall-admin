@@ -37,9 +37,9 @@ public class AttrAttrgroupRelationServiceImpl extends ServiceImpl<AttrAttrgroupR
 
     @Override
     public void deleteRelation(AttrGroupRelationVo[] attrGroupRelationVos) {
-        List<AttrAttrgroupRelationEntity> list = Arrays.asList(attrGroupRelationVos).stream().map((item)->{
+        List<AttrAttrgroupRelationEntity> list = Arrays.asList(attrGroupRelationVos).stream().map((item) -> {
             AttrAttrgroupRelationEntity attrAttrgroupRelationEntity = new AttrAttrgroupRelationEntity();
-            BeanUtils.copyProperties(item,attrAttrgroupRelationEntity);
+            BeanUtils.copyProperties(item, attrAttrgroupRelationEntity);
             return attrAttrgroupRelationEntity;
         }).collect(Collectors.toList());
         attrAttrgroupRelationDao.deleteBatchRelation(list);

@@ -58,6 +58,6 @@ public class OssController {
 
         ossClient.shutdown();
 
-        return R.ok().put("data",respMap);
+        return R.ok().put("data", respMap);
     }
 }

@@ -3,7 +3,6 @@
 package com.zhongger.zmail.admin.modules.app.controller;
 
 
-
 import com.zhongger.zmail.admin.common.utils.R;
 import com.zhongger.zmail.admin.common.validator.ValidatorUtils;
 import com.zhongger.zmail.admin.modules.app.form.LoginForm;
@@ -39,7 +38,7 @@ public class AppLoginController {
      */
     @PostMapping("login")
     @ApiOperation("登录")
-    public R login(@RequestBody LoginForm form){
+    public R login(@RequestBody LoginForm form) {
         //表单校验
         ValidatorUtils.validateEntity(form);
 

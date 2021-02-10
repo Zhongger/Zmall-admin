@@ -1,8 +1,8 @@
 /**
  * Copyright (c) 2016-2019 人人开源 All rights reserved.
- *
+ * <p>
  * https://www.renren.io
- *
+ * <p>
  * 版权所有，侵权必究！
  */
 
@@ -22,43 +22,43 @@ import javax.validation.constraints.NotBlank;
 @Data
 @TableName("sys_config")
 public class SysConfigEntity {
-	@TableId
-	private Long id;
-	@NotBlank(message="参数名不能为空")
-	private String paramKey;
-	@NotBlank(message="参数值不能为空")
-	private String paramValue;
-	private String remark;
+    @TableId
+    private Long id;
+    @NotBlank(message = "参数名不能为空")
+    private String paramKey;
+    @NotBlank(message = "参数值不能为空")
+    private String paramValue;
+    private String remark;
 
-	public Long getId() {
-		return id;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public String getParamKey() {
-		return paramKey;
-	}
+    public String getParamKey() {
+        return paramKey;
+    }
 
-	public void setParamKey(String paramKey) {
-		this.paramKey = paramKey;
-	}
+    public void setParamKey(String paramKey) {
+        this.paramKey = paramKey;
+    }
 
-	public String getParamValue() {
-		return paramValue;
-	}
+    public String getParamValue() {
+        return paramValue;
+    }
 
-	public void setParamValue(String paramValue) {
-		this.paramValue = paramValue;
-	}
+    public void setParamValue(String paramValue) {
+        this.paramValue = paramValue;
+    }
 
-	public String getRemark() {
-		return remark;
-	}
+    public String getRemark() {
+        return remark;
+    }
 
-	public void setRemark(String remark) {
-		this.remark = remark;
-	}
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
 }

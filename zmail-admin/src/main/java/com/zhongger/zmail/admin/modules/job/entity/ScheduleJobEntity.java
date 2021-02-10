@@ -19,113 +19,113 @@ import java.util.Date;
 @Data
 @TableName("schedule_job")
 public class ScheduleJobEntity implements Serializable {
-	private static final long serialVersionUID = 1L;
-	
-	/**
-	 * 任务调度参数key
-	 */
+    private static final long serialVersionUID = 1L;
+
+    /**
+     * 任务调度参数key
+     */
     public static final String JOB_PARAM_KEY = "JOB_PARAM_KEY";
-	
-	/**
-	 * 任务id
-	 */
-	@TableId
-	private Long jobId;
 
-	/**
-	 * spring bean名称
-	 */
-	@NotBlank(message="bean名称不能为空")
-	private String beanName;
-	
-	/**
-	 * 参数
-	 */
-	private String params;
-	
-	/**
-	 * cron表达式
-	 */
-	@NotBlank(message="cron表达式不能为空")
-	private String cronExpression;
+    /**
+     * 任务id
+     */
+    @TableId
+    private Long jobId;
 
-	/**
-	 * 任务状态
-	 */
-	private Integer status;
+    /**
+     * spring bean名称
+     */
+    @NotBlank(message = "bean名称不能为空")
+    private String beanName;
 
-	/**
-	 * 备注
-	 */
-	private String remark;
+    /**
+     * 参数
+     */
+    private String params;
 
-	/**
-	 * 创建时间
-	 */
-	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-	private Date createTime;
+    /**
+     * cron表达式
+     */
+    @NotBlank(message = "cron表达式不能为空")
+    private String cronExpression;
 
-	public static long getSerialVersionUID() {
-		return serialVersionUID;
-	}
+    /**
+     * 任务状态
+     */
+    private Integer status;
 
-	public static String getJobParamKey() {
-		return JOB_PARAM_KEY;
-	}
+    /**
+     * 备注
+     */
+    private String remark;
 
-	public Long getJobId() {
-		return jobId;
-	}
+    /**
+     * 创建时间
+     */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    private Date createTime;
 
-	public void setJobId(Long jobId) {
-		this.jobId = jobId;
-	}
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
 
-	public String getBeanName() {
-		return beanName;
-	}
+    public static String getJobParamKey() {
+        return JOB_PARAM_KEY;
+    }
 
-	public void setBeanName(String beanName) {
-		this.beanName = beanName;
-	}
+    public Long getJobId() {
+        return jobId;
+    }
 
-	public String getParams() {
-		return params;
-	}
+    public void setJobId(Long jobId) {
+        this.jobId = jobId;
+    }
 
-	public void setParams(String params) {
-		this.params = params;
-	}
+    public String getBeanName() {
+        return beanName;
+    }
 
-	public String getCronExpression() {
-		return cronExpression;
-	}
+    public void setBeanName(String beanName) {
+        this.beanName = beanName;
+    }
 
-	public void setCronExpression(String cronExpression) {
-		this.cronExpression = cronExpression;
-	}
+    public String getParams() {
+        return params;
+    }
 
-	public Integer getStatus() {
-		return status;
-	}
+    public void setParams(String params) {
+        this.params = params;
+    }
 
-	public void setStatus(Integer status) {
-		this.status = status;
-	}
+    public String getCronExpression() {
+        return cronExpression;
+    }
 
-	public String getRemark() {
-		return remark;
-	}
+    public void setCronExpression(String cronExpression) {
+        this.cronExpression = cronExpression;
+    }
 
-	public void setRemark(String remark) {
-		this.remark = remark;
-	}
+    public Integer getStatus() {
+        return status;
+    }
 
-	public Date getCreateTime() {
-		return createTime;
-	}
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
 
-	public void setCreateTime(Date createTime) {
-		this.createTime = createTime;
-	}
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
 }

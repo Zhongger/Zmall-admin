@@ -29,11 +29,11 @@ public class MemberController {
     private CouponFeignService couponFeignService;
 
     @RequestMapping("/testOpenFeign")
-    public R testOpenFeign(){
+    public R testOpenFeign() {
         R coupons = couponFeignService.getMemberCoupons();
         MemberEntity memberEntity = new MemberEntity();
         memberEntity.setNickname("Zhongger");
-        return R.ok().put("member",memberEntity).put("coupons",coupons.get("coupons"));
+        return R.ok().put("member", memberEntity).put("coupons", coupons.get("coupons"));
     }
 
     /**
@@ -41,7 +41,7 @@ public class MemberController {
      */
     @RequestMapping("/list")
     //@RequiresPermissions("member:member:list")
-    public R list(@RequestParam Map<String, Object> params){
+    public R list(@RequestParam Map<String, Object> params) {
         PageUtils page = memberService.queryPage(params);
 
         return R.ok().put("page", page);
@@ -53,8 +53,8 @@ public class MemberController {
      */
     @RequestMapping("/info/{id}")
     //@RequiresPermissions("member:member:info")
-    public R info(@PathVariable("id") Long id){
-		MemberEntity member = memberService.getById(id);
+    public R info(@PathVariable("id") Long id) {
+        MemberEntity member = memberService.getById(id);
 
         return R.ok().put("member", member);
     }
@@ -64,8 +64,8 @@ public class MemberController {
      */
     @RequestMapping("/save")
     //@RequiresPermissions("member:member:save")
-    public R save(@RequestBody MemberEntity member){
-		memberService.save(member);
+    public R save(@RequestBody MemberEntity member) {
+        memberService.save(member);
 
         return R.ok();
     }
@@ -75,8 +75,8 @@ public class MemberController {
      */
     @RequestMapping("/update")
     //@RequiresPermissions("member:member:update")
-    public R update(@RequestBody MemberEntity member){
-		memberService.updateById(member);
+    public R update(@RequestBody MemberEntity member) {
+        memberService.updateById(member);
 
         return R.ok();
     }
@@ -86,8 +86,8 @@ public class MemberController {
      */
     @RequestMapping("/delete")
     //@RequiresPermissions("member:member:delete")
-    public R delete(@RequestBody Long[] ids){
-		memberService.removeByIds(Arrays.asList(ids));
+    public R delete(@RequestBody Long[] ids) {
+        memberService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }

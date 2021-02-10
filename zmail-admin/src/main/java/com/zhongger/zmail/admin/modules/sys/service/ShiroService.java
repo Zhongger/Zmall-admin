@@ -2,7 +2,6 @@
 package com.zhongger.zmail.admin.modules.sys.service;
 
 
-
 import com.zhongger.zmail.admin.modules.sys.entity.SysUserEntity;
 import com.zhongger.zmail.admin.modules.sys.entity.SysUserTokenEntity;
 
@@ -23,6 +22,7 @@ public interface ShiroService {
 
     /**
      * 根据用户ID，查询用户
+     *
      * @param userId
      */
     SysUserEntity queryUser(Long userId);

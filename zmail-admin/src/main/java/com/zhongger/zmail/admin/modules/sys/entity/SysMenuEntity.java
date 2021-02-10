@@ -1,8 +1,8 @@
 /**
  * Copyright (c) 2016-2019 人人开源 All rights reserved.
- *
+ * <p>
  * https://www.renren.io
- *
+ * <p>
  * 版权所有，侵权必究！
  */
 
@@ -24,153 +24,153 @@ import java.util.List;
 @Data
 @TableName("sys_menu")
 public class SysMenuEntity implements Serializable {
-	private static final long serialVersionUID = 1L;
-	
-	/**
-	 * 菜单ID
-	 */
-	@TableId
-	private Long menuId;
+    private static final long serialVersionUID = 1L;
 
-	/**
-	 * 父菜单ID，一级菜单为0
-	 */
-	private Long parentId;
-	
-	/**
-	 * 父菜单名称
-	 */
-	@TableField(exist=false)
-	private String parentName;
+    /**
+     * 菜单ID
+     */
+    @TableId
+    private Long menuId;
 
-	/**
-	 * 菜单名称
-	 */
-	private String name;
+    /**
+     * 父菜单ID，一级菜单为0
+     */
+    private Long parentId;
 
-	/**
-	 * 菜单URL
-	 */
-	private String url;
+    /**
+     * 父菜单名称
+     */
+    @TableField(exist = false)
+    private String parentName;
 
-	/**
-	 * 授权(多个用逗号分隔，如：user:list,user:create)
-	 */
-	private String perms;
+    /**
+     * 菜单名称
+     */
+    private String name;
 
-	/**
-	 * 类型     0：目录   1：菜单   2：按钮
-	 */
-	private Integer type;
+    /**
+     * 菜单URL
+     */
+    private String url;
 
-	/**
-	 * 菜单图标
-	 */
-	private String icon;
+    /**
+     * 授权(多个用逗号分隔，如：user:list,user:create)
+     */
+    private String perms;
 
-	/**
-	 * 排序
-	 */
-	private Integer orderNum;
-	
-	/**
-	 * ztree属性
-	 */
-	@TableField(exist=false)
-	private Boolean open;
+    /**
+     * 类型     0：目录   1：菜单   2：按钮
+     */
+    private Integer type;
 
-	@TableField(exist=false)
-	private List<?> list;
+    /**
+     * 菜单图标
+     */
+    private String icon;
 
-	public static long getSerialVersionUID() {
-		return serialVersionUID;
-	}
+    /**
+     * 排序
+     */
+    private Integer orderNum;
 
-	public Long getMenuId() {
-		return menuId;
-	}
+    /**
+     * ztree属性
+     */
+    @TableField(exist = false)
+    private Boolean open;
 
-	public void setMenuId(Long menuId) {
-		this.menuId = menuId;
-	}
+    @TableField(exist = false)
+    private List<?> list;
 
-	public Long getParentId() {
-		return parentId;
-	}
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
 
-	public void setParentId(Long parentId) {
-		this.parentId = parentId;
-	}
+    public Long getMenuId() {
+        return menuId;
+    }
 
-	public String getParentName() {
-		return parentName;
-	}
+    public void setMenuId(Long menuId) {
+        this.menuId = menuId;
+    }
 
-	public void setParentName(String parentName) {
-		this.parentName = parentName;
-	}
+    public Long getParentId() {
+        return parentId;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public void setParentId(Long parentId) {
+        this.parentId = parentId;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public String getParentName() {
+        return parentName;
+    }
 
-	public String getUrl() {
-		return url;
-	}
+    public void setParentName(String parentName) {
+        this.parentName = parentName;
+    }
 
-	public void setUrl(String url) {
-		this.url = url;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public String getPerms() {
-		return perms;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setPerms(String perms) {
-		this.perms = perms;
-	}
+    public String getUrl() {
+        return url;
+    }
 
-	public Integer getType() {
-		return type;
-	}
+    public void setUrl(String url) {
+        this.url = url;
+    }
 
-	public void setType(Integer type) {
-		this.type = type;
-	}
+    public String getPerms() {
+        return perms;
+    }
 
-	public String getIcon() {
-		return icon;
-	}
+    public void setPerms(String perms) {
+        this.perms = perms;
+    }
 
-	public void setIcon(String icon) {
-		this.icon = icon;
-	}
+    public Integer getType() {
+        return type;
+    }
 
-	public Integer getOrderNum() {
-		return orderNum;
-	}
+    public void setType(Integer type) {
+        this.type = type;
+    }
 
-	public void setOrderNum(Integer orderNum) {
-		this.orderNum = orderNum;
-	}
+    public String getIcon() {
+        return icon;
+    }
 
-	public Boolean getOpen() {
-		return open;
-	}
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
 
-	public void setOpen(Boolean open) {
-		this.open = open;
-	}
+    public Integer getOrderNum() {
+        return orderNum;
+    }
 
-	public List<?> getList() {
-		return list;
-	}
+    public void setOrderNum(Integer orderNum) {
+        this.orderNum = orderNum;
+    }
 
-	public void setList(List<?> list) {
-		this.list = list;
-	}
+    public Boolean getOpen() {
+        return open;
+    }
+
+    public void setOpen(Boolean open) {
+        this.open = open;
+    }
+
+    public List<?> getList() {
+        return list;
+    }
+
+    public void setList(List<?> list) {
+        this.list = list;
+    }
 }

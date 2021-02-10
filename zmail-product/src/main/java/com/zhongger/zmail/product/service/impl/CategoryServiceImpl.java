@@ -47,9 +47,9 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
         //2.1找到所有的一级分类
         List<CategoryEntity> level1 = list.stream().filter(categoryEntity -> categoryEntity.getParentCid() == 0)
                 .map(categoryEntity -> {
-                    categoryEntity.setChildren(getChildren(categoryEntity,list));
+                    categoryEntity.setChildren(getChildren(categoryEntity, list));
                     return categoryEntity;
-                }).sorted((m1,m2)-> {
+                }).sorted((m1, m2) -> {
                     return (m1.getSort() == null ? 0 : m1.getSort()) - (m2.getSort() == null ? 0 : m2.getSort());
                 }).collect(Collectors.toList());
         return level1;
@@ -66,7 +66,7 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
     @Override
     public void updateCascade(CategoryEntity category) {
         this.updateById(category);
-        categoryBrandRelationService.updateCategory(category.getCatId(),category.getName());
+        categoryBrandRelationService.updateCategory(category.getCatId(), category.getName());
     }
 
     @Override
@@ -80,23 +80,23 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
         return parentPath.toArray(new Long[parentPath.size()]);
     }
 
-    private List<Long> findParentPath(Long catelogId,List<Long> paths){
+    private List<Long> findParentPath(Long catelogId, List<Long> paths) {
         //1、收集当前节点id
         paths.add(catelogId);
         CategoryEntity byId = this.getById(catelogId);
-        if(byId.getParentCid()!=0){
-            findParentPath(byId.getParentCid(),paths);
+        if (byId.getParentCid() != 0) {
+            findParentPath(byId.getParentCid(), paths);
         }
         return paths;
 
     }
 
-    private List<CategoryEntity> getChildren(CategoryEntity root , List<CategoryEntity> all){
-        return all.stream().filter(categoryEntity -> categoryEntity.getParentCid()==root.getCatId()).map(categoryEntity -> {
-            categoryEntity.setChildren(getChildren(categoryEntity,all));
+    private List<CategoryEntity> getChildren(CategoryEntity root, List<CategoryEntity> all) {
+        return all.stream().filter(categoryEntity -> categoryEntity.getParentCid() == root.getCatId()).map(categoryEntity -> {
+            categoryEntity.setChildren(getChildren(categoryEntity, all));
             return categoryEntity;
-        }).sorted((m1,m2)->{
-           return (m1.getSort()==null?0:m1.getSort())-(m2.getSort()==null?0:m2.getSort());
+        }).sorted((m1, m2) -> {
+            return (m1.getSort() == null ? 0 : m1.getSort()) - (m2.getSort() == null ? 0 : m2.getSort());
         })
                 .collect(Collectors.toList());
     }

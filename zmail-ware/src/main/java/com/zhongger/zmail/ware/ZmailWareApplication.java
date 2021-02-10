@@ -10,8 +10,8 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableFeignClients(basePackages = "com.zhongger.zmail.ware.feign")
 public class ZmailWareApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(ZmailWareApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(ZmailWareApplication.class, args);
+    }
 
 }

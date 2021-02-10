@@ -18,40 +18,40 @@ import java.util.Date;
 @Data
 @TableName("sys_oss")
 public class SysOssEntity implements Serializable {
-	private static final long serialVersionUID = 1L;
-	
-	@TableId
-	private Long id;
-	//URL地址
-	private String url;
-	//创建时间
-	private Date createDate;
+    private static final long serialVersionUID = 1L;
 
-	public static long getSerialVersionUID() {
-		return serialVersionUID;
-	}
+    @TableId
+    private Long id;
+    //URL地址
+    private String url;
+    //创建时间
+    private Date createDate;
 
-	public Long getId() {
-		return id;
-	}
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public String getUrl() {
-		return url;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public void setUrl(String url) {
-		this.url = url;
-	}
+    public String getUrl() {
+        return url;
+    }
 
-	public Date getCreateDate() {
-		return createDate;
-	}
+    public void setUrl(String url) {
+        this.url = url;
+    }
 
-	public void setCreateDate(Date createDate) {
-		this.createDate = createDate;
-	}
+    public Date getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
+    }
 }
