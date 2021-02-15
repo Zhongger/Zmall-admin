@@ -25,6 +25,11 @@ import java.util.Map;
 public class SpuInfoController {
     @Autowired
     private SpuInfoService spuInfoService;
+    @PostMapping("/{spuId}/up")
+    private R spuUp(@PathVariable("spuId")Long spuId){
+        spuInfoService.up(spuId);
+        return R.ok();
+    }
 
     @RequestMapping("/list")
     public R list(@RequestParam Map<String, Object> params) {

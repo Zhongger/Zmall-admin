@@ -2,7 +2,7 @@ spring:
   datasource:
     username: root
     password: root
-    url: jdbc:mysql://192.168.1.5:3306/zmail_ums
+    url: jdbc:mysql://192.168.1.6:3306/zmail_ums
     driver-class-name: com.mysql.cj.jdbc.Driver
   cloud:
     nacos:

@@ -10,12 +10,14 @@ import com.zhongger.zmail.ware.dao.WareSkuDao;
 import com.zhongger.zmail.ware.entity.WareSkuEntity;
 import com.zhongger.zmail.ware.feign.ProductFeignService;
 import com.zhongger.zmail.ware.service.WareSkuService;
+import com.zhongger.zmail.ware.vo.SkuHasStockVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 
 @Service("wareSkuService")
@@ -82,6 +84,19 @@ public class WareSkuServiceImpl extends ServiceImpl<WareSkuDao, WareSkuEntity> i
         } else {
             wareSkuDao.addStock(skuId, wareId, skuNum);
         }
+    }
+
+    @Override
+    public List<SkuHasStockVo> getSkuHasStock(List<Long> skuIds) {
+
+        List<SkuHasStockVo> list = skuIds.stream().map(skuId -> {
+            SkuHasStockVo vo = new SkuHasStockVo();
+            Long count = baseMapper.getSkuStock(skuId);
+            vo.setSkuId(skuId);
+            vo.setHasStock(count==null?false:count>0);
+            return vo;
+        }).collect(Collectors.toList());
+        return list;
     }
 
 
