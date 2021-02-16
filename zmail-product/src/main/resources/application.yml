@@ -11,6 +11,8 @@ spring:
       discovery:
         server-addr: 127.0.0.1
         service: product # 微服务名，注意一定要写，否则无法被注册到Nacos中
+  thymeleaf:
+    cache: false
 
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*.xml

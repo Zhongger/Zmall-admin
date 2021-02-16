@@ -7,16 +7,14 @@ import com.sun.xml.internal.bind.v2.TODO;
 import com.zhongger.zmail.common.utils.PageUtils;
 import com.zhongger.zmail.common.utils.Query;
 import com.zhongger.zmail.product.dao.CategoryDao;
+import com.zhongger.zmail.product.entity.Catalog2Vo;
 import com.zhongger.zmail.product.entity.CategoryEntity;
 import com.zhongger.zmail.product.service.CategoryBrandRelationService;
 import com.zhongger.zmail.product.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 
@@ -78,6 +76,33 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
 
 
         return parentPath.toArray(new Long[parentPath.size()]);
+    }
+
+    @Override
+    public List<CategoryEntity> getLevel1Catagories() {
+        return baseMapper.selectList(new QueryWrapper<CategoryEntity>().eq("parent_cid", 0));
+    }
+
+    @Override
+    public Map<String, List<Catalog2Vo>> getCatalogJsonDbWithSpringCache() {
+
+        List<CategoryEntity> categoryEntities = this.list(new QueryWrapper<CategoryEntity>().eq("cat_level", 2));
+
+        List<Catalog2Vo> catalog2Vos = categoryEntities.stream().map(categoryEntity -> {
+            List<CategoryEntity> level3 = this.list(new QueryWrapper<CategoryEntity>().eq("parent_cid", categoryEntity.getCatId()));
+            List<Catalog2Vo.Catalog3Vo> catalog3Vos = level3.stream().map(cat -> {
+                return new Catalog2Vo.Catalog3Vo(cat.getParentCid().toString(), cat.getCatId().toString(), cat.getName());
+            }).collect(Collectors.toList());
+            Catalog2Vo catalog2Vo = new Catalog2Vo(categoryEntity.getParentCid().toString(), categoryEntity.getCatId().toString(), categoryEntity.getName(), catalog3Vos);
+            return catalog2Vo;
+        }).collect(Collectors.toList());
+        Map<String, List<Catalog2Vo>> catalogMap = new HashMap<>();
+        for (Catalog2Vo catalog2Vo : catalog2Vos) {
+            List<Catalog2Vo> list = catalogMap.getOrDefault(catalog2Vo.getCatalog1Id(), new LinkedList<>());
+            list.add(catalog2Vo);
+            catalogMap.put(catalog2Vo.getCatalog1Id(), list);
+        }
+        return catalogMap;
     }
 
     private List<Long> findParentPath(Long catelogId, List<Long> paths) {

@@ -2,6 +2,7 @@ package com.zhongger.zmail.product.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.zhongger.zmail.common.utils.PageUtils;
+import com.zhongger.zmail.product.entity.Catalog2Vo;
 import com.zhongger.zmail.product.entity.CategoryEntity;
 
 
@@ -34,5 +35,10 @@ public interface CategoryService extends IService<CategoryEntity> {
      * @return
      */
     Long[] findCatelogPath(Long catelogId);
+
+    List<CategoryEntity> getLevel1Catagories();
+
+    Map<String, List<Catalog2Vo>> getCatalogJsonDbWithSpringCache();
+
 }
 
