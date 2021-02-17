@@ -4,8 +4,12 @@ spring:
   datasource:
     username: root
     password: root
-    url: jdbc:mysql://192.168.43.168:3306/zmail_pms
+    url: jdbc:mysql://192.168.1.8:3306/zmail_pms
     driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    host: 192.168.1.8
+    port: 6379
+    password: 123456
   cloud:
     nacos:
       discovery:
@@ -13,6 +17,8 @@ spring:
         service: product # 微服务名，注意一定要写，否则无法被注册到Nacos中
   thymeleaf:
     cache: false
+  cache:
+    type: redis
 
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*.xml
