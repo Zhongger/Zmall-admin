@@ -10,6 +10,6 @@ import java.util.List;
 
 @FeignClient("search")
 public interface SearchFeignService {
-    @PostMapping("/search/search/product")
+    @PostMapping("/search/save/product")
     R productStatusUp(@RequestBody List<SkuEsModel> skuEsModels);
 }
