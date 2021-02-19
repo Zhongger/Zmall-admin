@@ -19,6 +19,7 @@ public class SearchController {
     public String searchIndex(SearchParam searchParam, Model model, HttpServletRequest request){
         searchParam.set_queryString(request.getQueryString());
         SearchResult result = mallSearchService.getSearchResult(searchParam);
+        System.out.println(result);
         model.addAttribute("result",result);
         return "search";
     }

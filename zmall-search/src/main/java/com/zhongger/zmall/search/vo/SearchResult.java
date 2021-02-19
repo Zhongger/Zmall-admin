@@ -3,8 +3,10 @@ package com.zhongger.zmall.search.vo;
 import com.zhongger.zmail.common.to.es.SkuEsModel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.ToString;
 
 import java.util.List;
+@ToString
 @Data
 public class SearchResult {
     /**

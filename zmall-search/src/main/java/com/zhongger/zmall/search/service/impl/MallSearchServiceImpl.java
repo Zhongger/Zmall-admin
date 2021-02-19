@@ -77,23 +77,23 @@ public class MallSearchServiceImpl implements MallSearchService {
                 String sourceAsString = hit.getSourceAsString();
                 SkuEsModel skuEsModel = JSON.parseObject(sourceAsString, SkuEsModel.class);
                 //设置高亮属性
-                if (!StringUtils.isEmpty(searchParam.getKeyword())) {
-                    HighlightField skuTitle = hit.getHighlightFields().get("skuTitle");
-                    String highLight = skuTitle.getFragments()[0].string();
-                    skuEsModel.setSkuTitle(highLight);
-                }
+//                if (!StringUtils.isEmpty(searchParam.getKeyword())) {
+//                    HighlightField skuTitle = hit.getHighlightFields().get("skuTitle");
+//                    String highLight = skuTitle.getFragments()[0].string();
+//                    skuEsModel.setSkuTitle(highLight);
+//                }
                 skuEsModels.add(skuEsModel);
             }
             result.setProduct(skuEsModels);
         }
 
-        //2. 封装分页信息
-        //2.1 当前页码
+//        //2. 封装分页信息
+//        //2.1 当前页码
         result.setPageNum(searchParam.getPageNum());
-        //2.2 总记录数
+//        //2.2 总记录数
         long total = hits.getTotalHits().value;
         result.setTotal(total);
-        //2.3 总页码
+//        //2.3 总页码
         Integer totalPages = (int) total % EsConstant.PRODUCT_PAGESIZE == 0 ?
                 (int) total / EsConstant.PRODUCT_PAGESIZE : (int) total / EsConstant.PRODUCT_PAGESIZE + 1;
         result.setTotalPages(totalPages);
@@ -138,60 +138,60 @@ public class MallSearchServiceImpl implements MallSearchService {
             catalogVos.add(catalogVo);
         }
         result.setCatalogs(catalogVos);
-
-        //5 查询涉及到的所有属性
-        List<SearchResult.AttrVo> attrVos = new ArrayList<>();
-        //ParsedNested用于接收内置属性的聚合
-        ParsedNested parsedNested = aggregations.get("attrs");
-        ParsedLongTerms attrIdAgg = parsedNested.getAggregations().get("attrIdAgg");
-        for (Terms.Bucket bucket : attrIdAgg.getBuckets()) {
-            //5.1 查询属性id
-            Long attrId = bucket.getKeyAsNumber().longValue();
-
-            Aggregations subAttrAgg = bucket.getAggregations();
-            //5.2 查询属性名
-            ParsedStringTerms attrNameAgg = subAttrAgg.get("attrNameAgg");
-            String attrName = attrNameAgg.getBuckets().get(0).getKeyAsString();
-            //5.3 查询属性值
-            ParsedStringTerms attrValueAgg = subAttrAgg.get("attrValueAgg");
-            List<String> attrValues = new ArrayList<>();
-            for (Terms.Bucket attrValueAggBucket : attrValueAgg.getBuckets()) {
-                String attrValue = attrValueAggBucket.getKeyAsString();
-                attrValues.add(attrValue);
-                List<SearchResult.NavVo> navVos = new ArrayList<>();
-            }
-            SearchResult.AttrVo attrVo = new SearchResult.AttrVo(attrId, attrName, attrValues);
-            attrVos.add(attrVo);
-        }
-        result.setAttrs(attrVos);
-
-        // 6. 构建面包屑导航
-        List<String> attrs = searchParam.getAttrs();
-        if (attrs != null && attrs.size() > 0) {
-            List<SearchResult.NavVo> navVos = attrs.stream().map(attr -> {
-                String[] split = attr.split("_");
-                SearchResult.NavVo navVo = new SearchResult.NavVo();
-                //6.1 设置属性值
-                navVo.setNavValue(split[1]);
-                //6.2 查询并设置属性名
-                try {
-                    R r = productFeignService.info(Long.parseLong(split[0]));
-                    if (r.getCode() == 0) {
-                        AttrResponseVo attrResponseVo = JSON.parseObject(JSON.toJSONString(r.get("attr")), new TypeReference<AttrResponseVo>() {
-                        });
-                        navVo.setNavName(attrResponseVo.getAttrName());
-                    }
-                } catch (Exception e) {
-                    log.error("远程调用商品服务查询属性失败", e);
-                }
-                //6.3 设置面包屑跳转链接
-                String queryString = searchParam.get_queryString();
-                String replace = queryString.replace("&attrs=" + attr, "").replace("attrs=" + attr + "&", "").replace("attrs=" + attr, "");
-                navVo.setLink("http://search.gulimall.com/search.html" + (replace.isEmpty() ? "" : "?" + replace));
-                return navVo;
-            }).collect(Collectors.toList());
-            result.setNavs(navVos);
-        }
+//
+//        //5 查询涉及到的所有属性
+//        List<SearchResult.AttrVo> attrVos = new ArrayList<>();
+//        //ParsedNested用于接收内置属性的聚合
+//        ParsedNested parsedNested = aggregations.get("attrs");
+//        ParsedLongTerms attrIdAgg = parsedNested.getAggregations().get("attrIdAgg");
+//        for (Terms.Bucket bucket : attrIdAgg.getBuckets()) {
+//            //5.1 查询属性id
+//            Long attrId = bucket.getKeyAsNumber().longValue();
+//
+//            Aggregations subAttrAgg = bucket.getAggregations();
+//            //5.2 查询属性名
+//            ParsedStringTerms attrNameAgg = subAttrAgg.get("attrNameAgg");
+//            String attrName = attrNameAgg.getBuckets().get(0).getKeyAsString();
+//            //5.3 查询属性值
+//            ParsedStringTerms attrValueAgg = subAttrAgg.get("attrValueAgg");
+//            List<String> attrValues = new ArrayList<>();
+//            for (Terms.Bucket attrValueAggBucket : attrValueAgg.getBuckets()) {
+//                String attrValue = attrValueAggBucket.getKeyAsString();
+//                attrValues.add(attrValue);
+//                List<SearchResult.NavVo> navVos = new ArrayList<>();
+//            }
+//            SearchResult.AttrVo attrVo = new SearchResult.AttrVo(attrId, attrName, attrValues);
+//            attrVos.add(attrVo);
+//        }
+//        result.setAttrs(attrVos);
+//
+//        // 6. 构建面包屑导航
+//        List<String> attrs = searchParam.getAttrs();
+//        if (attrs != null && attrs.size() > 0) {
+//            List<SearchResult.NavVo> navVos = attrs.stream().map(attr -> {
+//                String[] split = attr.split("_");
+//                SearchResult.NavVo navVo = new SearchResult.NavVo();
+//                //6.1 设置属性值
+//                navVo.setNavValue(split[1]);
+//                //6.2 查询并设置属性名
+//                try {
+//                    R r = productFeignService.info(Long.parseLong(split[0]));
+//                    if (r.getCode() == 0) {
+//                        AttrResponseVo attrResponseVo = JSON.parseObject(JSON.toJSONString(r.get("attr")), new TypeReference<AttrResponseVo>() {
+//                        });
+//                        navVo.setNavName(attrResponseVo.getAttrName());
+//                    }
+//                } catch (Exception e) {
+//                    log.error("远程调用商品服务查询属性失败", e);
+//                }
+//                //6.3 设置面包屑跳转链接
+//                String queryString = searchParam.get_queryString();
+//                String replace = queryString.replace("&attrs=" + attr, "").replace("attrs=" + attr + "&", "").replace("attrs=" + attr, "");
+//                navVo.setLink("http://search.gulimall.com/search.html" + (replace.isEmpty() ? "" : "?" + replace));
+//                return navVo;
+//            }).collect(Collectors.toList());
+//            result.setNavs(navVos);
+//        }
         return result;
     }
 
@@ -239,18 +239,18 @@ public class MallSearchServiceImpl implements MallSearchService {
         }
         //1.2.5 attrs-nested
         //attrs=1_5寸:8寸&2_16G:8G
-        List<String> attrs = searchParam.getAttrs();
-        BoolQueryBuilder queryBuilder = new BoolQueryBuilder();
-        if (attrs != null && attrs.size() > 0) {
-            attrs.forEach(attr -> {
-                String[] attrSplit = attr.split("_");
-                queryBuilder.must(QueryBuilders.termQuery("attrs.attrId", attrSplit[0]));
-                String[] attrValues = attrSplit[1].split(":");
-                queryBuilder.must(QueryBuilders.termsQuery("attrs.attrValue", attrValues));
-            });
-        }
-        NestedQueryBuilder nestedQueryBuilder = QueryBuilders.nestedQuery("attrs", queryBuilder, ScoreMode.None);
-        boolQueryBuilder.filter(nestedQueryBuilder);
+//        List<String> attrs = searchParam.getAttrs();
+//        BoolQueryBuilder queryBuilder = new BoolQueryBuilder();
+//        if (attrs != null && attrs.size() > 0) {
+//            attrs.forEach(attr -> {
+//                String[] attrSplit = attr.split("_");
+//                queryBuilder.must(QueryBuilders.termQuery("attrs.attrId", attrSplit[0]));
+//                String[] attrValues = attrSplit[1].split(":");
+//                queryBuilder.must(QueryBuilders.termsQuery("attrs.attrValue", attrValues));
+//            });
+//        }
+//        NestedQueryBuilder nestedQueryBuilder = QueryBuilders.nestedQuery("attrs", queryBuilder, ScoreMode.None);
+//        boolQueryBuilder.filter(nestedQueryBuilder);
         //1. bool query构建完成
         searchSourceBuilder.query(boolQueryBuilder);
 
@@ -281,27 +281,27 @@ public class MallSearchServiceImpl implements MallSearchService {
         brandAgg.subAggregation(brandNameAgg);
         brandAgg.subAggregation(brandImgAgg);
         searchSourceBuilder.aggregation(brandAgg);
-
-        //5.2 按照catalog聚合
+//
+//        //5.2 按照catalog聚合
         TermsAggregationBuilder catalogAgg = AggregationBuilders.terms("catalogAgg").field("catalogId");
         TermsAggregationBuilder catalogNameAgg = AggregationBuilders.terms("catalogNameAgg").field("catalogName");
         catalogAgg.subAggregation(catalogNameAgg);
         searchSourceBuilder.aggregation(catalogAgg);
+//
+//        //5.3 按照attrs聚合
+//        NestedAggregationBuilder nestedAggregationBuilder = new NestedAggregationBuilder("attrs", "attrs");
+//        //按照attrId聚合
+//        TermsAggregationBuilder attrIdAgg = AggregationBuilders.terms("attrIdAgg").field("attrs.attrId");
+//        //按照attrId聚合之后再按照attrName和attrValue聚合
+//        TermsAggregationBuilder attrNameAgg = AggregationBuilders.terms("attrNameAgg").field("attrs.attrName");
+//        TermsAggregationBuilder attrValueAgg = AggregationBuilders.terms("attrValueAgg").field("attrs.attrValue");
+//        attrIdAgg.subAggregation(attrNameAgg);
+//        attrIdAgg.subAggregation(attrValueAgg);
+//
+//        nestedAggregationBuilder.subAggregation(attrIdAgg);
+//        searchSourceBuilder.aggregation(nestedAggregationBuilder);
 
-        //5.3 按照attrs聚合
-        NestedAggregationBuilder nestedAggregationBuilder = new NestedAggregationBuilder("attrs", "attrs");
-        //按照attrId聚合
-        TermsAggregationBuilder attrIdAgg = AggregationBuilders.terms("attrIdAgg").field("attrs.attrId");
-        //按照attrId聚合之后再按照attrName和attrValue聚合
-        TermsAggregationBuilder attrNameAgg = AggregationBuilders.terms("attrNameAgg").field("attrs.attrName");
-        TermsAggregationBuilder attrValueAgg = AggregationBuilders.terms("attrValueAgg").field("attrs.attrValue");
-        attrIdAgg.subAggregation(attrNameAgg);
-        attrIdAgg.subAggregation(attrValueAgg);
-
-        nestedAggregationBuilder.subAggregation(attrIdAgg);
-        searchSourceBuilder.aggregation(nestedAggregationBuilder);
-
-        log.debug("构建的DSL语句 {}", searchSourceBuilder.toString());
+        System.out.println("构建的DSL语句:" + searchSourceBuilder.toString());
 
         SearchRequest request = new SearchRequest(new String[]{EsConstant.PRODUCT_INDEX}, searchSourceBuilder);
         return request;
