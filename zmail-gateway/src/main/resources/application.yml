@@ -48,7 +48,7 @@ spring:
         - id: host_route
           uri: lb://product
           predicates:
-            - Host=zmall.com
+            - Host=zmall.com,item.zmall.com
         - id: search_route
           uri: lb://search
           predicates:
