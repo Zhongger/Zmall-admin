@@ -38,3 +38,9 @@ alibaba:
     secret-key: CACY0zkoLDHyOnTAkAL5VJ1HIsN3Kd
     oss:
       endpoint: oss-cn-shenzhen.aliyuncs.com
+
+zmall:
+  thread:
+    corePoolSize: 10
+    maxPoolSize: 20
+    keepAliveTime: 300

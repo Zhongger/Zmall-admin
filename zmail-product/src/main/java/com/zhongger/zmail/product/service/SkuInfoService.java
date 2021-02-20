@@ -3,6 +3,7 @@ package com.zhongger.zmail.product.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.zhongger.zmail.common.utils.PageUtils;
 import com.zhongger.zmail.product.entity.SkuInfoEntity;
+import com.zhongger.zmail.product.vo.SkuItemVo;
 
 import java.util.List;
 import java.util.Map;
@@ -24,5 +25,7 @@ public interface SkuInfoService extends IService<SkuInfoEntity> {
 
 
     List<SkuInfoEntity> getSkusBySpuId(Long spuId);
+
+    SkuItemVo item(Long skuId);
 }
 

@@ -8,6 +8,7 @@ import com.zhongger.zmail.common.utils.Query;
 import com.zhongger.zmail.product.dao.ProductAttrValueDao;
 import com.zhongger.zmail.product.entity.ProductAttrValueEntity;
 import com.zhongger.zmail.product.service.ProductAttrValueService;
+import com.zhongger.zmail.product.vo.SpuItemAttrGroupVo;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -52,6 +53,12 @@ public class ProductAttrValueServiceImpl extends ServiceImpl<ProductAttrValueDao
             return item;
         }).collect(Collectors.toList());
         this.saveBatch(collect);
+    }
+
+    @Override
+    public List<SpuItemAttrGroupVo> getProductGroupAttrsBySpuId(Long spuId, Long catalogId) {
+
+        return baseMapper.getProductGroupAttrsBySpuId(spuId, catalogId);
     }
 
 
