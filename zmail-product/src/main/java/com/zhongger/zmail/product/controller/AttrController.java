@@ -18,8 +18,8 @@ import java.util.Map;
 /**
  * 商品属性
  *
- * @author leifengyang
- * @email leifengyang@gmail.com
+ * @author zhongmingyi
+ * @email zhongmingyi@bytedance.com
  * @date 2019-10-01 22:50:32
  */
 @RestController

@@ -11,7 +11,7 @@ import java.io.InputStream;
 /**
  * 阿里云存储
  *
- * @author Mark sunlightcs@gmail.com
+ * @author Mark sunlightcs@bytedance.com
  */
 public class AliyunCloudStorageService extends CloudStorageService {
     private OSSClient client;

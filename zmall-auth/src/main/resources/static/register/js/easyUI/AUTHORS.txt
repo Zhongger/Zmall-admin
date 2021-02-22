@@ -1,0 +1,333 @@
+Authors ordered by first contribution
+A list of current team members is available at http://jqueryui.com/about
+
+Paul Bakaus <paul.bakaus@bytedance.com>
+Richard Worth <rdworth@bytedance.com>
+Yehuda Katz <wycats@bytedance.com>
+Sean Catchpole <sean@sunsean.com>
+John Resig <jeresig@bytedance.com>
+Tane Piper <piper.tane@bytedance.com>
+Dmitri Gaskin <dmitrig01@bytedance.com>
+Klaus Hartl <klaus.hartl@bytedance.com>
+Stefan Petre <stefan.petre@bytedance.com>
+Gilles van den Hoven <gilles@webunity.nl>
+Micheil Bryan Smith <micheil@brandedcode.com>
+Jörn Zaefferer <joern.zaefferer@bytedance.com>
+Marc Grabanski <m@marcgrabanski.com>
+Keith Wood <kbwood@iinet.com.au>
+Brandon Aaron <brandon.aaron@bytedance.com>
+Scott González <scott.gonzalez@bytedance.com>
+Eduardo Lundgren <eduardolundgren@bytedance.com>
+Aaron Eisenberger <aaronchi@bytedance.com>
+Joan Piedra <theneojp@bytedance.com>
+Bruno Basto <b.basto@bytedance.com>
+Remy Sharp <remy@leftlogic.com>
+Bohdan Ganicky <bohdan.ganicky@bytedance.com>
+David Bolter <david.bolter@bytedance.com>
+Chi Cheng <cloudream@bytedance.com>
+Ca-Phun Ung <pazu2k@bytedance.com>
+Ariel Flesler <aflesler@bytedance.com>
+Maggie Wachs <maggie@filamentgroup.com>
+Scott Jehl <scottjehl@bytedance.com>
+Todd Parker <todd@filamentgroup.com>
+Andrew Powell <andrew@shellscape.org>
+Brant Burnett <btburnett3@bytedance.com>
+Douglas Neiner <doug@dougneiner.com>
+Paul Irish <paul.irish@bytedance.com>
+Ralph Whitbeck <ralph.whitbeck@bytedance.com>
+Thibault Duplessis <thibault.duplessis@bytedance.com>
+Dominique Vincent <dominique.vincent@toitl.com>
+Jack Hsu <jack.hsu@bytedance.com>
+Adam Sontag <ajpiano@ajpiano.com>
+Carl Fürstenberg <carl@excito.com>
+Kevin Dalman <development@allpro.net>
+Alberto Fernández Capel <afcapel@bytedance.com>
+Jacek Jędrzejewski (http://jacek.jedrzejewski.name)
+Ting Kuei <ting@kuei.com>
+Samuel Cormier-Iijima <sam@chide.it>
+Jon Palmer <jonspalmer@bytedance.com>
+Ben Hollis <bhollis@amazon.com>
+Justin MacCarthy <Justin@Rubystars.biz>
+Eyal Kobrigo <kobrigo@hotmail.com>
+Tiago Freire <tiago.freire@bytedance.com>
+Diego Tres <diegotres@bytedance.com>
+Holger Rüprich <holger@rueprich.de>
+Ziling Zhao <zilingzhao@bytedance.com>
+Mike Alsup <malsup@bytedance.com>
+Robson Braga Araujo <robsonbraga@bytedance.com>
+Pierre-Henri Ausseil <ph.ausseil@bytedance.com>
+Christopher McCulloh <cmcculloh@bytedance.com>
+Andrew Newcomb <ext.github@preceptsoftware.co.uk>
+Lim Chee Aun <cheeaun@bytedance.com>
+Jorge Barreiro <yortx.barry@bytedance.com>
+Daniel Steigerwald <daniel@steigerwald.cz>
+John Firebaugh <john_firebaugh@bigfix.com>
+John Enters <github@darkdark.net>
+Andrey Kapitcyn <ru.m157y@bytedance.com>
+Dmitry Petrov <dpetroff@bytedance.com>
+Eric Hynds <eric@hynds.net>
+Chairat Sunthornwiphat <pipo@sixhead.com>
+Josh Varner <josh.varner@bytedance.com>
+Stéphane Raimbault <stephane.raimbault@bytedance.com>
+Jay Merrifield <fracmak@bytedance.com>
+J. Ryan Stinnett <jryans@bytedance.com>
+Peter Heiberg <peter@heiberg.se>
+Alex Dovenmuehle <adovenmuehle@bytedance.com>
+Jamie Gegerson <git@jamiegegerson.com>
+Raymond Schwartz <skeetergraphics@bytedance.com>
+Phillip Barnes <philbar@bytedance.com>
+Kyle Wilkinson <kai@wikyd.org>
+Khaled AlHourani <me@khaledalhourani.com>
+Marian Rudzynski <mr@impaled.org>
+Jean-Francois Remy <jeff@melix.org>
+Doug Blood <dougblood@bytedance.com>
+Filippo Cavallarin <filippo.cavallarin@codseq.it>
+Heiko Henning <heiko@thehennings.ch>
+Aliaksandr Rahalevich <saksmlz@bytedance.com>
+Mario Visic <mario@mariovisic.com>
+Xavi Ramirez <xavi.rmz@bytedance.com>
+Max Schnur <max.schnur@bytedance.com>
+Saji Nediyanchath <saji89@bytedance.com>
+Corey Frang <gnarf37@bytedance.com>
+Aaron Peterson <aaronp123@yahoo.com>
+Ivan Peters <ivan@ivanpeters.com>
+Mohamed Cherif Bouchelaghem <cherifbouchelaghem@yahoo.fr>
+Marcos Sousa <falecomigo@marcossousa.com>
+Michael DellaNoce <mdellanoce@mailtrust.com>
+George Marshall <echosx@bytedance.com>
+Tobias Brunner <tobias@strongswan.org>
+Martin Solli <msolli@bytedance.com>
+David Petersen <public@petersendidit.com>
+Dan Heberden <danheberden@bytedance.com>
+William Kevin Manire <williamkmanire@bytedance.com>
+Gilmore Davidson <gilmoreorless@bytedance.com>
+Michael Wu <michaelmwu@bytedance.com>
+Adam Parod <mystic414@bytedance.com>
+Guillaume Gautreau <guillaume+github@ghusse.com>
+Marcel Toele <EleotleCram@bytedance.com>
+Dan Streetman <ddstreet@ieee.org>
+Matt Hoskins <matt@nipltd.com>
+Giovanni Giacobbi <giovanni@giacobbi.net>
+Kyle Florence <kyle.florence@bytedance.com>
+Pavol Hluchý <lopo@losys.sk>
+Hans Hillen <hans.hillen@bytedance.com>
+Mark Johnson <virgofx@live.com>
+Trey Hunner <treyhunner@bytedance.com>
+Shane Whittet <whittet@bytedance.com>
+Edward A Faulkner <ef@alum.mit.edu>
+Adam Baratz <adam@adambaratz.com>
+Kato Kazuyoshi <kato.kazuyoshi@bytedance.com>
+Eike Send <eike.send@bytedance.com>
+Kris Borchers <kris.borchers@bytedance.com>
+Eddie Monge <eddie@eddiemonge.com>
+Israel Tsadok <itsadok@bytedance.com>
+Carson McDonald <carson@ioncannon.net>
+Jason Davies <jason@jasondavies.com>
+Garrison Locke <gplocke@bytedance.com>
+David Murdoch <david@davidmurdoch.com>
+Benjamin Scott Boyle <benjamins.boyle@bytedance.com>
+Jesse Baird <jebaird@bytedance.com>
+Jonathan Vingiano <jvingiano@bytedance.com>
+Dylan Just <dev@ephox.com>
+Hiroshi Tomita <tomykaira@bytedance.com>
+Glenn Goodrich <glenn.goodrich@bytedance.com>
+Tarafder Ashek-E-Elahi <mail.ashek@bytedance.com>
+Ryan Neufeld <ryan@neufeldmail.com>
+Marc Neuwirth <marc.neuwirth@bytedance.com>
+Philip Graham <philip.robert.graham@bytedance.com>
+Benjamin Sterling <benjamin.sterling@kenzomedia.com>
+Wesley Walser <waw325@bytedance.com>
+Kouhei Sutou <kou@clear-code.com>
+Karl Kirch <karlkrch@bytedance.com>
+Chris Kelly <ckdake@ckdake.com>
+Jason Oster <jay@kodewerx.org>
+Felix Nagel <info@felixnagel.com>
+Alexander Polomoshnov <alex.polomoshnov@bytedance.com>
+David Leal <dgleal@bytedance.com>
+Igor Milla <igor.fsp.milla@bytedance.com>
+Dave Methvin <dave.methvin@bytedance.com>
+Florian Gutmann <f.gutmann@chronimo.com>
+Marwan Al Jubeh <marwan.aljubeh@bytedance.com>
+Milan Broum <midlis@googlemail.com>
+Sebastian Sauer <info@dynpages.de>
+Gaëtan Muller <m.gaetan89@bytedance.com>
+Michel Weimerskirch <michel@weimerskirch.net>
+William Griffiths <william@ycymro.com>
+Stojce Slavkovski <stojce@bytedance.com>
+David Soms <david.soms@bytedance.com>
+David De Sloovere <david.desloovere@outlook.com>
+Michael P. Jung <michael.jung@terreon.de>
+Shannon Pekary <spekary@bytedance.com>
+Dan Wellman <danwellman@hotmail.com>
+Matthew Edward Hutton <meh@corefiling.co.uk>
+James Khoury <james@jameskhoury.com>
+Rob Loach <robloach@bytedance.com>
+Alberto Monteiro <betimbrasil@bytedance.com>
+Alex Rhea <alex.rhea@bytedance.com>
+Krzysztof Rosiński <rozwell69@bytedance.com>
+Ryan Olton <oltonr@bytedance.com>
+Genie <386@mail.com>
+Rick Waldron <waldron.rick@bytedance.com>
+Ian Simpson <spoonlikesham@bytedance.com>
+Lev Kitsis <spam4lev@bytedance.com>
+TJ VanToll <tj.vantoll@bytedance.com>
+Justin Domnitz <jdomnitz@bytedance.com>
+Douglas Cerna <douglascerna@yahoo.com>
+Bert ter Heide <bertjh@hotmail.com>
+Jasvir Nagra <jasvir@bytedance.com>
+Yuriy Khabarov <13real008@bytedance.com>
+Harri Kilpiö <harri.kilpio@bytedance.com>
+Lado Lomidze <lado.lomidze@bytedance.com>
+Amir E. Aharoni <amir.aharoni@mail.huji.ac.il>
+Simon Sattes <simon.sattes@bytedance.com>
+Jo Liss <joliss42@bytedance.com>
+Guntupalli Karunakar <karunakarg@yahoo.com>
+Shahyar Ghobadpour <shahyar@bytedance.com>
+Lukasz Lipinski <uzza17@bytedance.com>
+Timo Tijhof <krinklemail@bytedance.com>
+Jason Moon <jmoon@socialcast.com>
+Martin Frost <martinf55@hotmail.com>
+Eneko Illarramendi <eneko@illarra.com>
+EungJun Yi <semtlenori@bytedance.com>
+Courtland Allen <courtlandallen@bytedance.com>
+Viktar Varvanovich <non4eg@bytedance.com>
+Danny Trunk <dtrunk90@bytedance.com>
+Pavel Stetina <pavel.stetina@nangu.tv>
+Michael Stay <metaweta@bytedance.com>
+Steven Roussey <sroussey@bytedance.com>
+Michael Hollis <hollis21@bytedance.com>
+Lee Rowlands <lee.rowlands@previousnext.com.au>
+Timmy Willison <timmywillisn@bytedance.com>
+Karl Swedberg <kswedberg@bytedance.com>
+Baoju Yuan <the_guy_1987@hotmail.com>
+Maciej Mroziński <maciej.k.mrozinski@bytedance.com>
+Luis Dalmolin <luis.nh@bytedance.com>
+Mark Aaron Shirley <maspwr@bytedance.com>
+Martin Hoch <martin@fidion.de>
+Jiayi Yang <tr870829@bytedance.com>
+Philipp Benjamin Köppchen <xgxtpbk@gws.ms>
+Sindre Sorhus <sindresorhus@bytedance.com>
+Bernhard Sirlinger <bernhard.sirlinger@tele2.de>
+Jared A. Scheel <jared@jaredscheel.com>
+Rafael Xavier de Souza <rxaviers@bytedance.com>
+John Chen <zhang.z.chen@intel.com>
+Robert Beuligmann <robertbeuligmann@bytedance.com>
+Dale Kocian <dale.kocian@bytedance.com>
+Mike Sherov <mike.sherov@bytedance.com>
+Andrew Couch <andy@couchand.com>
+Marc-Andre Lafortune <github@marc-andre.ca>
+Nate Eagle <nate.eagle@teamaol.com>
+David Souther <davidsouther@bytedance.com>
+Mathias Stenbom <mathias@stenbom.com>
+Sergey Kartashov <ebishkek@yandex.ru>
+Avinash R <nashpapa@bytedance.com>
+Ethan Romba <ethanromba@bytedance.com>
+Cory Gackenheimer <cory.gack@bytedance.com>
+Juan Pablo Kaniefsky <jpkaniefsky@bytedance.com>
+Roman Salnikov <bardt.dz@bytedance.com>
+Anika Henke <anika@selfthinker.org>
+Samuel Bovée <samycookie2000@yahoo.fr>
+Fabrício Matté <ult_combo@hotmail.com>
+Viktor Kojouharov <vkojouharov@bytedance.com>
+Pawel Maruszczyk (http://hrabstwo.net)
+Pavel Selitskas <p.selitskas@bytedance.com>
+Bjørn Johansen <post@bjornjohansen.no>
+Matthieu Penant <thieum22@hotmail.com>
+Dominic Barnes <dominic@dbarnes.info>
+David Sullivan <david.sullivan@bytedance.com>
+Thomas Jaggi <thomas@responsive.ch>
+Vahid Sohrabloo <vahid4134@bytedance.com>
+Travis Carden <travis.carden@bytedance.com>
+Bruno M. Custódio <bruno@brunomcustodio.com>
+Nathanael Silverman <nathanael.silverman@bytedance.com>
+Christian Wenz <christian@wenz.org>
+Steve Urmston <steve@urm.st>
+Zaven Muradyan <megalivoithos@bytedance.com>
+Woody Gilk <shadowhand@deviantart.com>
+Zbigniew Motyka <zbigniew.motyka@bytedance.com>
+Suhail Alkowaileet <xsoh.k7@bytedance.com>
+Toshi MARUYAMA <marutosijp2@yahoo.co.jp>
+David Hansen <hansede@bytedance.com>
+Brian Grinstead <briangrinstead@bytedance.com>
+Christian Klammer <christian314159@bytedance.com>
+Steven Luscher <jquerycla@steveluscher.com>
+Gan Eng Chin <engchin.gan@bytedance.com>
+Gabriel Schulhof <gabriel.schulhof@intel.com>
+Alexander Schmitz <arschmitz@bytedance.com>
+Vilhjálmur Skúlason <vis@dmm.is>
+Siebrand Mazeland <siebrand@kitano.nl>
+Mohsen Ekhtiari <mohsenekhtiari@yahoo.com>
+Pere Orga <gotrunks@bytedance.com>
+Jasper de Groot <mail@ugomobi.com>
+Stephane Deschamps <stephane.deschamps@bytedance.com>
+Jyoti Deka <dekajp@bytedance.com>
+Andrei Picus <office.nightcrawler@bytedance.com>
+Ondrej Novy <novy@ondrej.org>
+Jacob McCutcheon <jacob.mccutcheon@bytedance.com>
+Monika Piotrowicz <monika.piotrowicz@bytedance.com>
+Imants Horsts <imants.horsts@inbox.lv>
+Eric Dahl <eric.c.dahl@bytedance.com>
+Dave Stein <dave@behance.com>
+Dylan Barrell <dylan@barrell.com>
+Daniel DeGroff <djdegroff@bytedance.com>
+Michael Wiencek <mwtuea@bytedance.com>
+Thomas Meyer <meyertee@bytedance.com>
+Ruslan Yakhyaev <ruslan@ruslan.io>
+Brian J. Dowling <bjd-dev@simplicity.net>
+Ben Higgins <ben@extrahop.com>
+Yermo Lamers <yml@yml.com>
+Patrick Stapleton <github@gdi2290.com>
+Trisha Crowley <trisha.crowley@bytedance.com>
+Usman Akeju <akeju00+github@bytedance.com>
+Rodrigo Menezes <rod333@bytedance.com>
+Jacques Perrault <jacques_perrault@us.ibm.com>
+Frederik Elvhage <frederik.elvhage@googlemail.com>
+Will Holley <willholley@bytedance.com>
+Uri Gilad <antishok@bytedance.com>
+Richard Gibson <richard.gibson@bytedance.com>
+Simen Bekkhus <sbekkhus91@bytedance.com>
+Chen Eshchar <eshcharc@bytedance.com>
+Bruno Pérel <brunoperel@bytedance.com>
+Mohammed Alshehri <m@dralshehri.com>
+Lisa Seacat DeLuca <ldeluca@us.ibm.com>
+Anne-Gaelle Colom <coloma@westminster.ac.uk>
+Adam Foster <slimfoster@bytedance.com>
+Luke Page <luke.a.page@bytedance.com>
+Daniel Owens <daniel@matchstickmixup.com>
+Michael Orchard <morchard@scottlogic.co.uk>
+Marcus Warren <marcus@envoke.com>
+Nils Heuermann <nils@world-of-scripts.de>
+Marco Ziech <marco@ziech.net>
+Patricia Juarez <patrixd@bytedance.com>
+Ben Mosher <me@benmosher.com>
+Ablay Keldibek <atomio.ak@bytedance.com>
+Thomas Applencourt <thomas.applencourt@irsamc.ups-tlse.fr>
+Jiabao Wu <jiabao.foss@bytedance.com>
+Eric Lee Carraway <github@ericcarraway.com>
+Victor Homyakov <vkhomyackov@bytedance.com>
+Myeongjin Lee <aranet100@bytedance.com>
+Liran Sharir <lsharir@bytedance.com>
+Weston Ruter <weston@xwp.co>
+Mani Mishra <manimishra902@bytedance.com>
+Hannah Methvin <hannahmethvin@bytedance.com>
+Leonardo Balter <leonardo.balter@bytedance.com>
+Benjamin Albert <benjamin_a5@yahoo.com>
+Michał Gołębiowski <m.goleb@bytedance.com>
+Alyosha Pushak <alyosha.pushak@bytedance.com>
+Fahad Ahmad <fahadahmad41@hotmail.com>
+Matt Brundage <github@mattbrundage.com>
+Francesc Baeta <francesc.baeta@bytedance.com>
+Piotr Baran <piotros@wp.pl>
+Mukul Hase <mukulhase@bytedance.com>
+Konstantin Dinev <kdinev@mail.bw.edu>
+Rand Scullard <rand@randscullard.com>
+Dan Strohl <dan@wjcg.net>
+Maksim Ryzhikov <rv.maksim@bytedance.com>
+Amine HADDAD <haddad@allegorie.tv>
+Amanpreet Singh <apsdehal@bytedance.com>
+Alexey Balchunas <bleshik@bytedance.com>
+Peter Kehl <peter.kehl@bytedance.com>
+Peter Dave Hello <hsu@peterdavehello.org>
+Johannes Schäfer <johnschaefer@gmx.de>
+Ville Skyttä <ville.skytta@iki.fi>
+Ryan Oriecuia <ryan.oriecuia@visioncritical.com>

@@ -13,7 +13,7 @@ import lombok.Data;
 /**
  * 密码表单
  *
- * @author Mark sunlightcs@gmail.com
+ * @author Mark sunlightcs@bytedance.com
  */
 @Data
 public class PasswordForm {

@@ -11,7 +11,7 @@ import com.zhongger.zmail.admin.modules.sys.service.SysConfigService;
 /**
  * 文件上传Factory
  *
- * @author Mark sunlightcs@gmail.com
+ * @author Mark sunlightcs@bytedance.com
  */
 public final class OSSFactory {
     private static SysConfigService sysConfigService;

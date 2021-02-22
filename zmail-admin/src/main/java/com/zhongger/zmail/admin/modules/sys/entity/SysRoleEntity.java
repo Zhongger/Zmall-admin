@@ -21,7 +21,7 @@ import java.util.List;
 /**
  * 角色
  *
- * @author Mark sunlightcs@gmail.com
+ * @author Mark sunlightcs@bytedance.com
  */
 @Data
 @TableName("sys_role")

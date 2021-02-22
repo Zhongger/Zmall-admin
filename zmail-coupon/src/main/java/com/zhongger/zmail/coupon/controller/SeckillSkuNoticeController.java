@@ -19,8 +19,8 @@ import com.zhongger.zmail.common.utils.R;
 /**
  * 秒杀商品通知订阅
  *
- * @author leifengyang
- * @email leifengyang@gmail.com
+ * @author zhongmingyi
+ * @email zhongmingyi@bytedance.com
  * @date 2019-10-08 09:36:39
  */
 @RestController

@@ -19,7 +19,7 @@ import java.util.Date;
 /**
  * 用户
  *
- * @author Mark sunlightcs@gmail.com
+ * @author Mark sunlightcs@bytedance.com
  */
 @Data
 @TableName("tb_user")

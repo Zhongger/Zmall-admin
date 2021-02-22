@@ -17,7 +17,7 @@ import java.io.Serializable;
 /**
  * 用户与角色对应关系
  *
- * @author Mark sunlightcs@gmail.com
+ * @author Mark sunlightcs@bytedance.com
  */
 @Data
 @TableName("sys_user_role")

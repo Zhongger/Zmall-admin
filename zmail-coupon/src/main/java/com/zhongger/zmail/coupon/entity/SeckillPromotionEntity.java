@@ -11,8 +11,8 @@ import lombok.Data;
 /**
  * 秒杀活动
  *
- * @author leifengyang
- * @email leifengyang@gmail.com
+ * @author zhongmingyi
+ * @email zhongmingyi@bytedance.com
  * @date 2019-10-08 09:36:40
  */
 @Data

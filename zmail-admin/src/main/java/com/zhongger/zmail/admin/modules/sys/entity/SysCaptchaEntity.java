@@ -18,7 +18,7 @@ import java.util.Date;
 /**
  * 系统验证码
  *
- * @author Mark sunlightcs@gmail.com
+ * @author Mark sunlightcs@bytedance.com
  */
 @Data
 @TableName("sys_captcha")

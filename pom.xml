@@ -17,6 +17,7 @@
         <module>zmail-admin</module>
         <module>zmail-common</module>
         <module>zmall-search</module>
+        <module>zmall-auth</module>
     </modules>
 
 </project>

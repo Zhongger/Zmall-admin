@@ -13,7 +13,7 @@ import java.util.Properties;
 /**
  * 生成验证码配置
  *
- * @author Mark sunlightcs@gmail.com
+ * @author Mark sunlightcs@bytedance.com
  */
 @Configuration
 public class KaptchaConfig {

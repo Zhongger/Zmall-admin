@@ -13,7 +13,7 @@ import java.util.Date;
 /**
  * 文件上传
  *
- * @author Mark sunlightcs@gmail.com
+ * @author Mark sunlightcs@bytedance.com
  */
 @Data
 @TableName("sys_oss")

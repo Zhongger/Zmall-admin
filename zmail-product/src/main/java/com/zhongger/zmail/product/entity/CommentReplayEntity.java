@@ -11,8 +11,8 @@ import lombok.Data;
 /**
  * 商品评价回复关系
  *
- * @author leifengyang
- * @email leifengyang@gmail.com
+ * @author zhongmingyi
+ * @email zhongmingyi@bytedance.com
  * @date 2019-10-01 21:08:48
  */
 @Data

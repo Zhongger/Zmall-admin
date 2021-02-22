@@ -10,8 +10,8 @@ import java.util.Date;
 import lombok.Data;
 
 /**
- * @author leifengyang
- * @email leifengyang@gmail.com
+ * @author zhongmingyi
+ * @email zhongmingyi@bytedance.com
  * @date 2019-11-17 13:50:10
  */
 @Data

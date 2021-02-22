@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * APP测试接口
  *
- * @author Mark sunlightcs@gmail.com
+ * @author Mark sunlightcs@bytedance.com
  */
 @RestController
 @RequestMapping("/app")

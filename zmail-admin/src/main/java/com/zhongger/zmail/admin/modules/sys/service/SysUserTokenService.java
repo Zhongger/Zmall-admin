@@ -15,7 +15,7 @@ import com.zhongger.zmail.admin.modules.sys.entity.SysUserTokenEntity;
 /**
  * 用户Token
  *
- * @author Mark sunlightcs@gmail.com
+ * @author Mark sunlightcs@bytedance.com
  */
 public interface SysUserTokenService extends IService<SysUserTokenEntity> {
 

@@ -17,7 +17,7 @@ import java.util.List;
 /**
  * 菜单管理
  *
- * @author Mark sunlightcs@gmail.com
+ * @author Mark sunlightcs@bytedance.com
  */
 @Mapper
 public interface SysMenuDao extends BaseMapper<SysMenuEntity> {

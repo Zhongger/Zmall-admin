@@ -15,7 +15,7 @@ import org.apache.ibatis.annotations.Mapper;
 /**
  * 验证码
  *
- * @author Mark sunlightcs@gmail.com
+ * @author Mark sunlightcs@bytedance.com
  */
 @Mapper
 public interface SysCaptchaDao extends BaseMapper<SysCaptchaEntity> {

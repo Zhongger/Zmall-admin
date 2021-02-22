@@ -11,8 +11,8 @@ import lombok.Data;
 /**
  * 成长值变化历史记录
  *
- * @author leifengyang
- * @email leifengyang@gmail.com
+ * @author zhongmingyi
+ * @email zhongmingyi@bytedance.com
  * @date 2019-10-08 09:47:05
  */
 @Data
